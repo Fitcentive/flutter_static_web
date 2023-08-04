@@ -148,21 +148,21 @@ class Data {
     ),
   ];
 
-  static List<NimBusCardData> nimbusCardData = [
-    NimBusCardData(
+  static List<CustomCardData> nimbusCardData = [
+    CustomCardData(
       title: StringConst.UI_UX,
       subtitle: StringConst.UI_UX_DESC,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
     ),
-    NimBusCardData(
+    CustomCardData(
       title: StringConst.PHOTOGRAPHER,
       subtitle: StringConst.PHOTOGRAPHER_DESC,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
       circleBgColor: AppColors.yellow100,
     ),
-    NimBusCardData(
+    CustomCardData(
       title: StringConst.FREELANCER,
       subtitle: StringConst.FREELANCER_DESC,
       leadingIcon: Icons.done,

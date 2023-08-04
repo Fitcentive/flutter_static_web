@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
-import 'package:flutter_static_web/presentation/widgets/buttons/nimbus_button.dart';
+import 'package:flutter_static_web/presentation/widgets/buttons/custom_button.dart';
 import 'package:flutter_static_web/presentation/widgets/buttons/social_button.dart';
 import 'package:flutter_static_web/presentation/widgets/empty.dart';
 import 'package:flutter_static_web/presentation/widgets/nav_item.dart';
-import 'package:flutter_static_web/presentation/widgets/buttons/nimbus_button_link.dart';
-import 'package:flutter_static_web/presentation/widgets/nimbus_link.dart';
-import 'package:flutter_static_web/presentation/widgets/nimbus_vertical_divider.dart';
+import 'package:flutter_static_web/presentation/widgets/custom_vertical_divider.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
 import 'package:flutter_static_web/utils/functions.dart';
 import 'package:flutter_static_web/values/values.dart';
@@ -67,10 +65,18 @@ class _NavSectionWebState extends State<NavSectionWeb> {
     return Container(
       height: Sizes.HEIGHT_100,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.teal,
         boxShadow: [
           Shadows.elevationShadow,
         ],
+        // gradient: RadialGradient(
+        //   center: Alignment.center,
+        //   radius: 0.8,
+        //   colors: [
+        //     Color(0x009688),
+        //     Color(0x2C3E50),
+        //   ],
+        // ),
       ),
       child: IntrinsicHeight(
         child: Row(
@@ -80,11 +86,12 @@ class _NavSectionWebState extends State<NavSectionWeb> {
               onTap: () {},
               child: Image.asset(
                 ImagePath.LOGO_DARK,
-                height: Sizes.HEIGHT_52,
+                height: Sizes.HEIGHT_100,
+                fit: BoxFit.contain,
               ),
             ),
             SizedBox(width: logoSpaceRight),
-            NimbusVerticalDivider(),
+            CustomVerticalDivider(),
             Spacer(flex: 1),
             ..._buildNavItems(widget.navItems),
             Spacer(flex: menuSpacerRight),
@@ -104,10 +111,11 @@ class _NavSectionWebState extends State<NavSectionWeb> {
                 }
               },
             ),
-            NimbusVerticalDivider(),
+            CustomVerticalDivider(),
             SizedBox(width: contactBtnSpaceLeft),
-             NimbusButton(
-              buttonTitle: StringConst.CONTACT_ME,
+             CustomButton(
+              buttonColor: AppColors.orange1,
+              buttonTitle: StringConst.CONTACT_US,
               width: contactBtnWidth,
               // onPressed: () => openUrlLink(StringConst.EMAIL_URL),
               opensUrl: true,
@@ -142,6 +150,11 @@ class _NavSectionWebState extends State<NavSectionWeb> {
       items.add(
         NavItem(
           title: navItems[index].name,
+          titleColor: Colors.white,
+          // titleStyle: TextStyle(
+          //   fontWeight: FontWeight.bold,
+          //   fontFamily: FontF
+          // ),
           isSelected: navItems[index].isSelected,
           onTap: () => _onTapNavItem(
             context: navItems[index].key,

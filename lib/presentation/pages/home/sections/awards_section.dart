@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
 import 'package:flutter_static_web/presentation/widgets/bullet_text.dart';
 import 'package:flutter_static_web/presentation/widgets/content_area.dart';
-import 'package:flutter_static_web/presentation/widgets/nimbus_info_section.dart';
+import 'package:flutter_static_web/presentation/widgets/custom_info_section.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
 import 'package:flutter_static_web/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -144,7 +144,7 @@ class _AwardsSectionState extends State<AwardsSection>
   }
 
   Widget _buildNimbusInfoSectionSm() {
-    return NimbusInfoSection2(
+    return CustomInfoSection2(
       sectionTitle: StringConst.MY_AWARDS,
       title1: StringConst.AWARDS_TITLE,
       hasTitle2: false,
@@ -161,7 +161,7 @@ class _AwardsSectionState extends State<AwardsSection>
   }
 
   Widget _buildNimbusInfoSectionLg() {
-    return NimbusInfoSection1(
+    return CustomInfoSection1(
       sectionTitle: StringConst.MY_AWARDS,
       title1: StringConst.AWARDS_TITLE,
       hasTitle2: false,

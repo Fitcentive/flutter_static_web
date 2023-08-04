@@ -9,7 +9,7 @@ import 'package:flutter_static_web/presentation/pages/home/sections/statistics_s
 import 'package:flutter_static_web/presentation/widgets/blog_card.dart';
 import 'package:flutter_static_web/presentation/widgets/buttons/social_button.dart';
 import 'package:flutter_static_web/presentation/widgets/buttons/social_button_2.dart';
-import 'package:flutter_static_web/presentation/widgets/nimbus_card.dart';
+import 'package:flutter_static_web/presentation/widgets/custom_card.dart';
 import 'package:flutter_static_web/presentation/widgets/project_item.dart';
 import 'package:flutter_static_web/presentation/widgets/skill_card.dart';
 import 'package:flutter_static_web/presentation/widgets/skill_level.dart';

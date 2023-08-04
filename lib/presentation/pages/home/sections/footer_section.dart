@@ -2,10 +2,10 @@ import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
-import 'package:flutter_static_web/presentation/widgets/buttons/nimbus_button.dart';
+import 'package:flutter_static_web/presentation/widgets/buttons/custom_button.dart';
 import 'package:flutter_static_web/presentation/widgets/content_area.dart';
-import 'package:flutter_static_web/presentation/widgets/buttons/nimbus_button_link.dart';
-import 'package:flutter_static_web/presentation/widgets/nimbus_link.dart';
+import 'package:flutter_static_web/presentation/widgets/buttons/custom_button_link.dart';
+import 'package:flutter_static_web/presentation/widgets/custom_link.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
 import 'package:flutter_static_web/utils/functions.dart';
 import 'package:flutter_static_web/values/values.dart';
@@ -269,7 +269,7 @@ class _FooterSectionState extends State<FooterSection> {
                   SpaceH60(),
                   ..._buildFooterItems(footerItems),
                   SpaceH60(),
-                  NimbusButton(
+                  CustomButton(
                     buttonTitle: StringConst.HIRE_ME,
                     buttonColor: AppColors.primaryColor,
                     onPressed: () {},
@@ -339,7 +339,7 @@ class _FooterSectionState extends State<FooterSection> {
                   ],
                 ),
                 Spacer(),
-                NimBusButtonLink(
+                CustomButtonLink(
                   url: StringConst.EMAIL_URL,
                   buttonTitle: StringConst.HIRE_ME,
                   buttonColor: AppColors.primaryColor,

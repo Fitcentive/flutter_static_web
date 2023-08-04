@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
-import 'package:flutter_static_web/presentation/widgets/nimbus_link.dart';
+import 'package:flutter_static_web/presentation/widgets/custom_link.dart';
 import 'package:flutter_static_web/presentation/widgets/buttons/social_button.dart';
 import 'package:flutter_static_web/presentation/widgets/circular_container.dart';
-import 'package:flutter_static_web/presentation/widgets/nimbus_card.dart';
+import 'package:flutter_static_web/presentation/widgets/custom_card.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
 import 'package:flutter_static_web/values/values.dart';
 
@@ -72,7 +72,7 @@ List<Widget> buildSocialIcons(List<SocialButtonData> socialItems) {
       //     size: Sizes.ICON_SIZE_18,
       //   ),
       // ),
-      NimBusLink(
+      CustomLink(
         url: socialItems[index].url,
         child: Icon(
           socialItems[index].iconData,
@@ -88,7 +88,7 @@ List<Widget> buildSocialIcons(List<SocialButtonData> socialItems) {
 
 List<Widget> buildCardRow({
   required BuildContext context,
-  required List<NimBusCardData> data,
+  required List<CustomCardData> data,
   required double width,
   bool isHorizontal = true,
   bool isWrap = false,
@@ -116,7 +116,7 @@ List<Widget> buildCardRow({
   );
   for (int index = 0; index < data.length; index++) {
     items.add(
-      NimBusCard(
+      CustomCard(
         width: width,
         height: responsiveSize(
           context,

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_static_web/values/values.dart';
 import 'package:url_launcher/link.dart';
 
-import 'nimbus_button.dart';
+import 'custom_button.dart';
 
-class NimBusButtonLink extends StatelessWidget {
-  const NimBusButtonLink({
+class CustomButtonLink extends StatelessWidget {
+  const CustomButtonLink({
     Key? key,
     required this.buttonTitle,
     required this.url,
@@ -31,7 +31,7 @@ class NimBusButtonLink extends StatelessWidget {
       uri: Uri.parse(url),
       target: linkTarget,
       builder: (context, followLink) {
-        return NimbusButton(
+        return CustomButton(
           width: width,
           height: height,
           buttonTitle: buttonTitle,

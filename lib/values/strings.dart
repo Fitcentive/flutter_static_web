@@ -2,11 +2,14 @@ part of values;
 
 class StringConst {
   //strings
-  static const String APP_NAME = "Nimbus CV";
+  static const String APP_NAME = "Fitcentive";
 
   //Nav Section
   static const String NAME_ABBREV = "CA";
   static const String HOME = "Home";
+  static const String FEATURES = "Features";
+  static const String PLATFORMS = "Platforms";
+  static const String PRICING = "Pricing";
   static const String SERVICES = "Services";
   static const String ABOUT = "About";
   static const String PROJECTS = "Projects";
@@ -15,7 +18,7 @@ class StringConst {
   static const String SKILLS = "Skills";
   static const String CONTACT = "Contacts";
 
-  static const String CONTACT_ME = "Contact Me";
+  static const String CONTACT_US = "Contact Us";
   static const String DEV_EMAIL = "davidcobbina47@gmail.com";
   static const String EMAIL_URL = "mailto:<$DEV_EMAIL>?subject=&body=";
 

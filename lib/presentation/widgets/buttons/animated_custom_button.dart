@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_static_web/values/values.dart';
 
-class AnimatedNimbusButton extends StatefulWidget {
+class AnimatedCustomButton extends StatefulWidget {
   final String title;
   final Color titleColor;
   final double width;
@@ -21,7 +21,7 @@ class AnimatedNimbusButton extends StatefulWidget {
   final Curve curve;
   final GestureTapCallback? onTap;
 
-  AnimatedNimbusButton({
+  AnimatedCustomButton({
     required this.title,
     required this.iconData,
     this.titleColor = AppColors.white,
@@ -50,10 +50,10 @@ class AnimatedNimbusButton extends StatefulWidget {
   });
 
   @override
-  _AnimatedNimbusButtonState createState() => _AnimatedNimbusButtonState();
+  _AnimatedCustomButtonState createState() => _AnimatedCustomButtonState();
 }
 
-class _AnimatedNimbusButtonState extends State<AnimatedNimbusButton> {
+class _AnimatedCustomButtonState extends State<AnimatedCustomButton> {
   bool _isHovering = false;
 
   @override

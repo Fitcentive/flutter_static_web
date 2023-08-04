@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
 
-class NimBusLink extends StatelessWidget {
-  const NimBusLink({
+class CustomLink extends StatelessWidget {
+  const CustomLink({
     Key? key,
     required this.url,
     required this.child,

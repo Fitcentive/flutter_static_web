@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
 import 'package:flutter_static_web/presentation/widgets/content_area.dart';
-import 'package:flutter_static_web/presentation/widgets/nimbus_info_section.dart';
+import 'package:flutter_static_web/presentation/widgets/custom_info_section.dart';
 import 'package:flutter_static_web/presentation/widgets/skill_card.dart';
 import 'package:flutter_static_web/presentation/widgets/skill_level.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
@@ -240,7 +240,7 @@ class _SkillsSectionState extends State<SkillsSection>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                NimbusInfoSection1(
+                CustomInfoSection1(
                   sectionTitle: StringConst.MY_SKILLS,
                   title1: StringConst.SKILLS_TITLE_1,
                   title2: StringConst.SKILLS_TITLE_2,
@@ -262,7 +262,7 @@ class _SkillsSectionState extends State<SkillsSection>
   }
 
   Widget _buildNimbusSm({required double width}) {
-    return NimbusInfoSection2(
+    return CustomInfoSection2(
       sectionTitle: StringConst.MY_SKILLS,
       title1: StringConst.SKILLS_TITLE_1,
       title2: StringConst.SKILLS_TITLE_2,

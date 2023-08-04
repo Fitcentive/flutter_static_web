@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
-import 'package:flutter_static_web/presentation/widgets/buttons/nimbus_button.dart';
+import 'package:flutter_static_web/presentation/widgets/buttons/custom_button.dart';
 import 'package:flutter_static_web/presentation/widgets/content_area.dart';
-import 'package:flutter_static_web/presentation/widgets/nimbus_info_section.dart';
+import 'package:flutter_static_web/presentation/widgets/custom_info_section.dart';
 import 'package:flutter_static_web/presentation/widgets/project_item.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
 import 'package:flutter_static_web/values/values.dart';
@@ -107,7 +107,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
                   children: [
                     _buildNimbusInfoSectionSm(),
                     SpaceH40(),
-                    NimbusButton(
+                    CustomButton(
                       buttonTitle: StringConst.ALL_PROJECTS,
                       buttonColor: AppColors.primaryColor,
                       onPressed: () {},
@@ -156,7 +156,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
                             child: _buildNimbusInfoSectionLg(),
                           ),
                           Spacer(),
-                          NimbusButton(
+                          CustomButton(
                             buttonTitle: StringConst.ALL_PROJECTS,
                             buttonColor: AppColors.primaryColor,
                             onPressed: () {},
@@ -184,7 +184,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
   }
 
   Widget _buildNimbusInfoSectionSm() {
-    return NimbusInfoSection2(
+    return CustomInfoSection2(
       sectionTitle: StringConst.MY_WORKS,
       title1: StringConst.MEET_MY_PROJECTS,
       hasTitle2: false,
@@ -194,7 +194,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
   }
 
   Widget _buildNimbusInfoSectionLg() {
-    return NimbusInfoSection1(
+    return CustomInfoSection1(
       sectionTitle: StringConst.MY_WORKS,
       title1: StringConst.MEET_MY_PROJECTS,
       hasTitle2: false,

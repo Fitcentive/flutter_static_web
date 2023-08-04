@@ -2,9 +2,9 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
 import 'package:flutter_static_web/presentation/pages/home/sections/header_section/widgets.dart';
-import 'package:flutter_static_web/presentation/widgets/buttons/nimbus_button.dart';
+import 'package:flutter_static_web/presentation/widgets/buttons/custom_button.dart';
 import 'package:flutter_static_web/presentation/widgets/content_area.dart';
-import 'package:flutter_static_web/presentation/widgets/buttons/nimbus_button_link.dart';
+import 'package:flutter_static_web/presentation/widgets/buttons/custom_button_link.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
 import 'package:flutter_static_web/utils/functions.dart';
 import 'package:flutter_static_web/values/values.dart';
@@ -245,7 +245,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                             SpaceH40(),
                             Row(
                               children: [
-                                NimbusButton(
+                                CustomButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: StringConst.DOWNLOAD_CV,
@@ -253,7 +253,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   onPressed: () {},
                                 ),
                                 SpaceW16(),
-                                NimbusButton(
+                                CustomButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: StringConst.HIRE_ME_NOW,

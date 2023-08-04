@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_static_web/values/values.dart';
 
-class NimbusVerticalDivider extends StatelessWidget {
-  const NimbusVerticalDivider({
+class CustomVerticalDivider extends StatelessWidget {
+  const CustomVerticalDivider({
     this.thickness = 0.8,
     this.width,
     this.color = AppColors.black,

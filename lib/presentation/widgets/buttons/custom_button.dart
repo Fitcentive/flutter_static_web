@@ -3,8 +3,8 @@ import 'package:flutter_static_web/presentation/layout/adaptive.dart';
 import 'package:flutter_static_web/values/values.dart';
 import 'package:url_launcher/link.dart';
 
-class NimbusButton extends StatelessWidget {
-  NimbusButton({
+class CustomButton extends StatelessWidget {
+  CustomButton({
     required this.buttonTitle,
     this.width = Sizes.WIDTH_150,
     this.height = Sizes.HEIGHT_60,

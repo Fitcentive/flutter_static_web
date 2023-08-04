@@ -3,9 +3,9 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
 import 'package:flutter_static_web/presentation/widgets/blog_card.dart';
-import 'package:flutter_static_web/presentation/widgets/buttons/nimbus_button.dart';
+import 'package:flutter_static_web/presentation/widgets/buttons/custom_button.dart';
 import 'package:flutter_static_web/presentation/widgets/content_area.dart';
-import 'package:flutter_static_web/presentation/widgets/nimbus_info_section.dart';
+import 'package:flutter_static_web/presentation/widgets/custom_info_section.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
 import 'package:flutter_static_web/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -64,7 +64,7 @@ class _BlogSectionState extends State<BlogSection> {
                     children: [
                       ContentArea(
                         width: contentAreaWidth,
-                        child: NimbusInfoSection2(
+                        child: CustomInfoSection2(
                           sectionTitle: StringConst.MY_BLOG,
                           title1: StringConst.BLOG_SECTION_TITLE_1,
                           title2: StringConst.BLOG_SECTION_TITLE_2,
@@ -74,7 +74,7 @@ class _BlogSectionState extends State<BlogSection> {
                       SpaceH50(),
                       Align(
                         alignment: Alignment.bottomRight,
-                        child: NimbusButton(
+                        child: CustomButton(
                           buttonTitle: StringConst.BLOG_VIEW_ALL,
                           buttonColor: AppColors.primaryColor,
                           onPressed: () {},
@@ -91,7 +91,7 @@ class _BlogSectionState extends State<BlogSection> {
                     children: [
                       ContentArea(
                         width: screenWidth * 0.7,
-                        child: NimbusInfoSection1(
+                        child: CustomInfoSection1(
                           sectionTitle: StringConst.MY_BLOG,
                           title1: StringConst.BLOG_SECTION_TITLE_1,
                           title2: StringConst.BLOG_SECTION_TITLE_2,
@@ -99,7 +99,7 @@ class _BlogSectionState extends State<BlogSection> {
                         ),
                       ),
                       Spacer(),
-                      NimbusButton(
+                      CustomButton(
                         buttonTitle: StringConst.BLOG_VIEW_ALL,
                         buttonColor: AppColors.primaryColor,
                         onPressed: () {},

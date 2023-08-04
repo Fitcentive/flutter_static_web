@@ -3,8 +3,8 @@ import 'package:flutter_static_web/presentation/layout/adaptive.dart';
 import 'package:flutter_static_web/presentation/widgets/buttons/social_button_2.dart';
 import 'package:flutter_static_web/presentation/widgets/content_area.dart';
 import 'package:flutter_static_web/presentation/widgets/empty.dart';
-import 'package:flutter_static_web/presentation/widgets/nimbus_info_section.dart';
-import 'package:flutter_static_web/presentation/widgets/nimbus_link.dart';
+import 'package:flutter_static_web/presentation/widgets/custom_info_section.dart';
+import 'package:flutter_static_web/presentation/widgets/custom_link.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
 import 'package:flutter_static_web/utils/functions.dart';
 import 'package:flutter_static_web/values/values.dart';
@@ -300,7 +300,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              NimbusInfoSection1(
+              CustomInfoSection1(
                 sectionTitle: StringConst.ABOUT_ME,
                 title1: StringConst.CREATIVE_DESIGN,
                 title2: StringConst.HELP,
@@ -334,7 +334,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
 
   Widget nimbusInfoSectionSm({required double width}) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    return NimbusInfoSection2(
+    return CustomInfoSection2(
       sectionTitle: StringConst.ABOUT_ME,
       title1: StringConst.CREATIVE_DESIGN,
       title2: StringConst.HELP,

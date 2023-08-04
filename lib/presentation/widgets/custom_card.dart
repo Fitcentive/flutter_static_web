@@ -3,7 +3,7 @@ import 'package:flutter_static_web/presentation/widgets/empty.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
 import 'package:flutter_static_web/values/values.dart';
 
-class NimBusCardData {
+class CustomCardData {
   IconData leadingIcon;
   IconData trailingIcon;
   Color trailingIconColor;
@@ -12,7 +12,7 @@ class NimBusCardData {
   String title;
   String subtitle;
 
-  NimBusCardData({
+  CustomCardData({
     required this.leadingIcon,
     required this.trailingIcon,
     this.circleBgColor = AppColors.black,
@@ -23,8 +23,8 @@ class NimBusCardData {
   });
 }
 
-class NimBusCard extends StatefulWidget {
-  NimBusCard({
+class CustomCard extends StatefulWidget {
+  CustomCard({
     this.leading,
     this.title,
     this.subtitle,
@@ -62,10 +62,10 @@ class NimBusCard extends StatefulWidget {
   final bool hasAnimation;
 
   @override
-  _NimBusCardState createState() => _NimBusCardState();
+  _CustomCardState createState() => _CustomCardState();
 }
 
-class _NimBusCardState extends State<NimBusCard>
+class _CustomCardState extends State<CustomCard>
     with SingleTickerProviderStateMixin {
   bool _hovering = false;
   late AnimationController _controller;

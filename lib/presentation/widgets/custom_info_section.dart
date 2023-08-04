@@ -4,7 +4,7 @@ import 'package:flutter_static_web/presentation/widgets/empty.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
 import 'package:flutter_static_web/values/values.dart';
 
-class NimbusInfoSection1 extends StatelessWidget {
+class CustomInfoSection1 extends StatelessWidget {
   final String sectionTitle;
   final String title1;
   final String title2;
@@ -20,7 +20,7 @@ class NimbusInfoSection1 extends StatelessWidget {
   final double dividerHeight;
   final Widget? child;
 
-  NimbusInfoSection1({
+  CustomInfoSection1({
     required this.sectionTitle,
     required this.title1,
     required this.body,
@@ -115,7 +115,7 @@ class NimbusInfoSection1 extends StatelessWidget {
   }
 }
 
-class NimbusInfoSection2 extends StatelessWidget {
+class CustomInfoSection2 extends StatelessWidget {
   final String sectionTitle;
   final String title1;
   final String title2;
@@ -130,7 +130,7 @@ class NimbusInfoSection2 extends StatelessWidget {
   final double dividerWidth;
   final Widget? child;
 
-  NimbusInfoSection2({
+  CustomInfoSection2({
     required this.sectionTitle,
     required this.title1,
     required this.body,

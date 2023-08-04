@@ -6,10 +6,10 @@ import 'package:flutter_static_web/values/values.dart';
 import 'app_theme.dart';
 
 void main() {
-  runApp(Nimbus());
+  runApp(StaticWebsite());
 }
 
-class Nimbus extends StatelessWidget {
+class StaticWebsite extends StatelessWidget {
   final _appRouter = AppRouter();
  
   @override

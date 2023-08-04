@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
 import 'package:flutter_static_web/presentation/widgets/content_area.dart';
-import 'package:flutter_static_web/presentation/widgets/nimbus_info_section.dart';
+import 'package:flutter_static_web/presentation/widgets/custom_info_section.dart';
 import 'package:flutter_static_web/values/values.dart';
 
 class TestimonialsSection extends StatelessWidget {
@@ -22,7 +22,7 @@ class TestimonialsSection extends StatelessWidget {
           Stack(
             children: [
               Card(
-                child: NimbusInfoSection1(
+                child: CustomInfoSection1(
                   sectionTitle: StringConst.MY_TESTIMONIALS,
                   title1: StringConst.TESTIMONIALS_SECTION_TITLE,
                   hasTitle2: false,

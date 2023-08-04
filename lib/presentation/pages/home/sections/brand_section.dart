@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
-import 'package:flutter_static_web/presentation/widgets/buttons/nimbus_button.dart';
+import 'package:flutter_static_web/presentation/widgets/buttons/custom_button.dart';
 import 'package:flutter_static_web/presentation/widgets/skill_card.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
 import 'package:flutter_static_web/values/values.dart';
@@ -117,7 +117,7 @@ class BrandSection extends StatelessWidget {
           SpaceH40(),
           Align(
             alignment: Alignment.center,
-            child: NimbusButton(
+            child: CustomButton(
               buttonTitle: StringConst.HIRE_ME,
               buttonColor: AppColors.primaryColor,
               onPressed: () {},

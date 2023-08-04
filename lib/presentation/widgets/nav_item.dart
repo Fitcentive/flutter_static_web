@@ -62,15 +62,17 @@ class _NavItemState extends State<NavItem> with SingleTickerProviderStateMixin {
           children: [
             if (!widget.isMobile)
               widget.isSelected
-                  ? Positioned(
-                      top: Sizes.SIZE_12,
+                  ? const Positioned(
+                      top: Sizes.SIZE_18,
                       child: SelectedIndicator(
+                        indicatorColor: AppColors.orange1,
                         width: indicatorWidth,
                       ),
                     )
                   : Positioned(
-                      top: Sizes.SIZE_12,
+                      top: Sizes.SIZE_18,
                       child: AnimatedHoverIndicator(
+                        indicatorColor: AppColors.orange1,
                         isHover: _hovering,
                         width: indicatorWidth,
                       ),

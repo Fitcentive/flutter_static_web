@@ -43,11 +43,11 @@ class _HomePageState extends State<HomePage>
 
   final List<NavItemData> navItems = [
     NavItemData(name: StringConst.HOME, key: GlobalKey(), isSelected: true),
+    NavItemData(name: StringConst.FEATURES, key: GlobalKey()),
+    NavItemData(name: StringConst.PLATFORMS, key: GlobalKey()),
+    NavItemData(name: StringConst.PRICING, key: GlobalKey()),
     NavItemData(name: StringConst.ABOUT, key: GlobalKey()),
-    NavItemData(name: StringConst.SKILLS, key: GlobalKey()),
-    NavItemData(name: StringConst.PROJECTS, key: GlobalKey()),
-    NavItemData(name: StringConst.AWARDS, key: GlobalKey()),
-    NavItemData(name: StringConst.BLOG, key: GlobalKey()),
+    // NavItemData(name: StringConst.BLOG, key: GlobalKey()),
   ];
 
   @override
@@ -119,93 +119,94 @@ class _HomePageState extends State<HomePage>
           Expanded(
             child: SingleChildScrollView(
               controller: _scrollController,
-              child: Column(
-                children: [
-                  Stack(
-                    children: [
-                      Positioned.fill(
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Image.asset(ImagePath.BLOB_BEAN_ASH),
-                        ),
-                      ),
-                      Column(
-                        children: [
-                          HeaderSection(
-                            key: navItems[0].key,
-                          ),
-                          SizedBox(height: spacerHeight),
-                          VisibilityDetector(
-                            key: Key("about"),
-                            onVisibilityChanged: (visibilityInfo) {
-                              double visiblePercentage =
-                                  visibilityInfo.visibleFraction * 100;
-                              if (visiblePercentage > 10) {
-                                _controller.forward();
-                              }
-                            },
-                            child: Container(
-                              key: navItems[1].key,
-                              child: AboutMeSection(),
-                            ),
-                          ),
-                        ],
-                      )
+              child: Container(
+                // color: Colors.teal,
+                decoration: BoxDecoration(
+                  gradient: RadialGradient(
+                    center: Alignment.center,
+                    radius: 0.8,
+                    colors: [
+                      Color(0x009688),
+                      Color(0x2C3E50),
                     ],
                   ),
-                  SizedBox(height: spacerHeight),
-                  Stack(
-                    children: [
-                      Positioned(
-                        top: assignWidth(context, 0.1),
-                        left: -assignWidth(context, 0.05),
-                        child: Image.asset(ImagePath.BLOB_FEMUR_ASH),
-                      ),
-                      Positioned(
-                        right: -assignWidth(context, 0.5),
-                        child: Image.asset(ImagePath.BLOB_SMALL_BEAN_ASH),
-                      ),
-                      Column(
-                        children: [
-                          Container(
-                            key: navItems[2].key,
-                            child: SkillsSection(),
-                          ),
-                          SizedBox(height: spacerHeight),
-                          StatisticsSection(),
-                          SizedBox(height: spacerHeight),
-                          Container(
-                            key: navItems[3].key,
-                            child: ProjectsSection(),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: spacerHeight),
-                  Stack(
-                    children: [
-                      Positioned(
-                        left: -assignWidth(context, 0.6),
-                        child: Image.asset(ImagePath.BLOB_ASH),
-                      ),
-                      Column(
-                        children: [
-                          Container(
-                            key: navItems[4].key,
-                            child: AwardsSection(),
-                          ),
-                          SpaceH40(),
-                          Container(
-                            key: navItems[5].key,
-                            child: BlogSection(),
-                          ),
-                          FooterSection(),
-                        ],
-                      )
-                    ],
-                  ),
-                ],
+                ),
+                child: Column(
+                  children: [
+                    HeaderSection(
+                      key: navItems[0].key,
+                    ),
+                    // SizedBox(height: spacerHeight),
+                    // VisibilityDetector(
+                    //   key: Key("about"),
+                    //   onVisibilityChanged: (visibilityInfo) {
+                    //     double visiblePercentage =
+                    //         visibilityInfo.visibleFraction * 100;
+                    //     if (visiblePercentage > 10) {
+                    //       _controller.forward();
+                    //     }
+                    //   },
+                    //   child: Container(
+                    //     key: navItems[1].key,
+                    //     child: AboutMeSection(),
+                    //   ),
+                    // ),
+                    // SizedBox(height: spacerHeight),
+                    // // Skills and projects
+                    // Stack(
+                    //   children: [
+                    //     Positioned(
+                    //       top: assignWidth(context, 0.1),
+                    //       left: -assignWidth(context, 0.05),
+                    //       child: Image.asset(ImagePath.BLOB_FEMUR_ASH),
+                    //     ),
+                    //     Positioned(
+                    //       right: -assignWidth(context, 0.5),
+                    //       child: Image.asset(ImagePath.BLOB_SMALL_BEAN_ASH),
+                    //     ),
+                    //     Column(
+                    //       children: [
+                    //         Container(
+                    //           key: navItems[2].key,
+                    //           child: SkillsSection(),
+                    //         ),
+                    //         SizedBox(height: spacerHeight),
+                    //         StatisticsSection(),
+                    //         SizedBox(height: spacerHeight),
+                    //         Container(
+                    //           key: navItems[3].key,
+                    //           child: ProjectsSection(),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ],
+                    // ),
+                    // SizedBox(height: spacerHeight),
+                    // // Awards, blog
+                    // Stack(
+                    //   children: [
+                    //     Positioned(
+                    //       left: -assignWidth(context, 0.6),
+                    //       child: Image.asset(ImagePath.BLOB_ASH),
+                    //     ),
+                    //     Column(
+                    //       children: [
+                    //         Container(
+                    //           key: navItems[4].key,
+                    //           child: AwardsSection(),
+                    //         ),
+                    //         SpaceH40(),
+                    //         Container(
+                    //           key: navItems[5].key,
+                    //           child: BlogSection(),
+                    //         ),
+                    //         FooterSection(),
+                    //       ],
+                    //     )
+                    //   ],
+                    // ),
+                  ],
+                ),
               ),
             ),
           ),
