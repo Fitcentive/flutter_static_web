@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
 import 'package:flutter_static_web/presentation/pages/home/sections/header_section/widgets.dart';
 import 'package:flutter_static_web/presentation/widgets/buttons/custom_button.dart';
+import 'package:flutter_static_web/presentation/widgets/buttons/social_button_2.dart';
 import 'package:flutter_static_web/presentation/widgets/content_area.dart';
-import 'package:flutter_static_web/presentation/widgets/buttons/custom_button_link.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
+import 'package:flutter_static_web/utils/functions.dart';
 import 'package:flutter_static_web/values/values.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const double bodyTextSizeLg = 16.0;
 const double bodyTextSizeSm = 14.0;
@@ -74,39 +76,14 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
     double heightOfStack = heightOfBlobAndGlobe * 2;
     double blobOffset = heightOfStack * 0.3;
     return ContentArea(
-      child: Stack(
+      child: Column(
         children: [
           Container(
             height: heightOfStack,
             child: Stack(
               children: [
-                Stack(
-                  children: [
-                    // Positioned(
-                    //   left: -(sizeOfBlobSm * 0.7),
-                    //   top: blobOffset,
-                    //   child: Image.asset(
-                    //     ImagePath.BLOB_BLACK,
-                    //     height: sizeOfBlobSm,
-                    //     width: sizeOfBlobSm,
-                    //   ),
-                    // ),
-                    Positioned(
-                      left: -(sizeOfGoldenGlobe / 3),
-                      top: blobOffset + dottedGoldenGlobeOffset,
-                      child: RotationTransition(
-                        turns: _controller,
-                        child: Image.asset(
-                          ImagePath.DOTS_GLOBE_YELLOW,
-                          width: sizeOfGoldenGlobe,
-                          height: sizeOfGoldenGlobe,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
                 Positioned(
-                  right: -(sizeOfBlobSm),
+                  right: 5,
                   child: HeaderImage(
                     controller: _controller,
                     globeSize: sizeOfGoldenGlobe,
@@ -116,170 +93,132 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
               ],
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: heightOfStack * 0.1),
-                    child: SelectableText(
-                      StringConst.FIRST_NAME,
-                      style: textTheme.headline1?.copyWith(
-                        color: AppColors.grey50,
-                        fontSize: headerIntroTextSize * 2.5,
+          Container(
+            margin: EdgeInsets.only(
+                top: 10,
+                left: (sizeOfBlobSm * 0.35)
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    ConstrainedBox(
+                      constraints:
+                      BoxConstraints(maxWidth: screenWidth),
+                      child: AnimatedTextKit(
+                        animatedTexts: [
+                          TypewriterAnimatedText(
+                            StringConst.FIND_YOUR,
+                            speed: Duration(milliseconds: 60),
+                            textStyle: textTheme.headline2?.copyWith(
+                                fontSize: headerIntroTextSize,
+                                color: Colors.white
+                            ),
+                          ),
+                        ],
+                        onTap: () {},
+                        isRepeatingAnimation: false,
+                        totalRepeatCount: 5,
                       ),
                     ),
-                  ),
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: sidePadding),
-                    margin: EdgeInsets.only(top: heightOfStack * 0.3),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
+                    ConstrainedBox(
+                      constraints:
+                      BoxConstraints(maxWidth: screenWidth),
+                      child: AnimatedTextKit(
+                        animatedTexts: [
+                          TypewriterAnimatedText(
+                            StringConst.INCENTIVE,
+                            speed: Duration(milliseconds: 60),
+                            textStyle: textTheme.headline2?.copyWith(
+                                fontSize: headerIntroTextSize,
+                                color: AppColors.orange1
+                            ),
+                          ),
+                        ],
+                        onTap: () {},
+                        isRepeatingAnimation: false,
+                        totalRepeatCount: 5,
+                      ),
+                    ),
+                    ConstrainedBox(
+                      constraints:
+                      BoxConstraints(maxWidth: screenWidth),
+                      child: AnimatedTextKit(
+                        animatedTexts: [
+                          TypewriterAnimatedText(
+                            StringConst.TO_KEEP_FIT,
+                            speed: Duration(milliseconds: 60),
+                            textStyle: textTheme.headline2?.copyWith(
+                                fontSize: headerIntroTextSize,
+                                color: AppColors.white
+                            ),
+                          ),
+                        ],
+                        onTap: () {},
+                        isRepeatingAnimation: false,
+                        totalRepeatCount: 5,
+                      ),
+                    ),
+                    SpaceH16(),
+                    Column(
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
+                        Row(
                           children: [
-                            ConstrainedBox(
-                              constraints:
-                                  BoxConstraints(maxWidth: screenWidth),
-                              child: AnimatedTextKit(
-                                animatedTexts: [
-                                  TypewriterAnimatedText(
-                                    StringConst.FIND_YOUR,
-                                    speed: Duration(milliseconds: 60),
-                                    textStyle: textTheme.headline2?.copyWith(
-                                      fontSize: headerIntroTextSize,
-                                    ),
-                                  ),
-                                ],
-                                onTap: () {},
-                                isRepeatingAnimation: true,
-                                totalRepeatCount: 5,
-                              ),
+                            CustomButton(
+                              width: buttonWidth,
+                              height: buttonHeight,
+                              buttonTitle: StringConst.GET_STARTED,
+                              buttonColor: AppColors.orange1,
+                              onPressed: () {
+                                openUrlLink("https://app.fitcentive.xyz");
+                              },
                             ),
-                            ConstrainedBox(
-                              constraints:
-                                  BoxConstraints(maxWidth: screenWidth),
-                              child: AnimatedTextKit(
-                                animatedTexts: [
-                                  TypewriterAnimatedText(
-                                    StringConst.POSITION,
-                                    speed: Duration(milliseconds: 80),
-                                    textStyle: textTheme.headline2?.copyWith(
-                                      fontSize: headerIntroTextSize,
-                                      color: AppColors.primaryColor,
-                                      height: 1.2,
-                                    ),
-                                  ),
-                                ],
-                                onTap: () {},
-                                isRepeatingAnimation: true,
-                                totalRepeatCount: 5,
-                              ),
-                            ),
-                            SpaceH16(),
-                            ConstrainedBox(
-                              constraints:
-                                  BoxConstraints(maxWidth: screenWidth * 0.5),
-                              child: SelectableText(
-                                StringConst.ABOUT_DEV,
-                                style: bodyTextStyle?.copyWith(
-                                  height: 1.5,
-                                  // color: AppColors.black,
-                                ),
-                              ),
-                            ),
-                            SpaceH30(),
-                            Wrap(
-                              // mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SelectableText(
-                                      "${StringConst.EMAIL}:",
-                                      style: socialTitleStyle,
-                                    ),
-                                    SpaceH8(),
-                                    SelectableText(
-                                      "${StringConst.DEV_EMAIL_2}",
-                                      style: bodyTextStyle,
-                                    ),
-                                  ],
-                                ),
-                                SpaceW16(),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SelectableText(
-                                      "${StringConst.BEHANCE}:",
-                                      style: socialTitleStyle,
-                                    ),
-                                    SpaceH8(),
-                                    SelectableText(
-                                      "${StringConst.BEHANCE_ID}",
-                                      style: bodyTextStyle,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            SpaceH40(),
-                            Row(
-                              children: [
-                                CustomButton(
-                                  width: buttonWidth,
-                                  height: buttonHeight,
-                                  buttonTitle: StringConst.GET_STARTED,
-                                  onPressed: () {},
-                                ),
-                                SpaceW16(),
-                                CustomButton(
-                                  width: buttonWidth,
-                                  height: buttonHeight,
-                                  buttonTitle: StringConst.HIRE_ME_NOW,
-                                  onPressed: () {},
-                                ),
-                                // NimBusButtonLink(
-                                //   width: buttonWidth,
-                                //   height: buttonHeight,
-                                //   url: StringConst.EMAIL_URL,
-                                //   buttonColor: AppColors.primaryColor,
-                                //   buttonTitle: StringConst.HIRE_ME_NOW,
-                                // ),
-                              ],
-                            ),
-                            SpaceH30(),
-                            Wrap(
-                              children: buildSocialIcons(Data.socialData),
-                            )
                           ],
                         ),
+                        SpaceH16(),
+                        Row(
+                          children: [
+                            SocialButton2(
+                              title: "",
+                              iconData: FontAwesomeIcons.googlePlay,
+                              onPressed: () => openUrlLink("https://google.ca"),
+                              buttonColor: AppColors.orange1,
+                              iconColor: AppColors.white,
+                            ),
+                            SocialButton2(
+                              title: "",
+                              iconData: FontAwesomeIcons.appStore,
+                              onPressed: () => openUrlLink("https://google.ca"),
+                              buttonColor: AppColors.orange1,
+                              iconColor: AppColors.white,
+                            ),
+                          ],
+                        )
                       ],
                     ),
-                  ),
-                ],
-              ),
-              SpaceH40(),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: sidePadding,
+                  ],
                 ),
-                child: Column(
-                  children: buildCardRow(
-                    context: context,
-                    data: Data.nimbusCardData,
-                    dataCallback: widget.hopButtonCallback,
-                    width: contentAreaWidth,
-                    isHorizontal: false,
-                    hasAnimation: false,
-                  ),
-                ),
+              ],
+            ),
+          ),
+          SpaceH40(),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: sidePadding,
+            ),
+            child: Column(
+              children: buildCardRow(
+                context: context,
+                data: Data.nimbusCardData,
+                dataCallback: widget.hopButtonCallback,
+                width: contentAreaWidth,
+                isHorizontal: false,
+                hasAnimation: false,
               ),
-            ],
+            ),
           ),
         ],
       ),

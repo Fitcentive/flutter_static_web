@@ -106,7 +106,7 @@ class _SkillCardState extends State<SkillCard> {
               child: Opacity(
                 opacity: 0.9,
                 child: Image.asset(
-                  ImagePath.ICON_BOX,
+                  ImagePath.LOGO_DARK,
                   width: widget.width,
                   height: widget.height,
                   fit: BoxFit.fill,

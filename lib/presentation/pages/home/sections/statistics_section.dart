@@ -87,22 +87,6 @@ class _StatisticsSectionState extends State<StatisticsSection>
                   ),
                   child: Stack(
                     children: [
-                      Positioned(
-                        top: -75,
-                        left: -50,
-                        child: Image.asset(
-                          ImagePath.BOX_COVER_GOLD,
-                          height: 200,
-                        ),
-                      ),
-                      Positioned(
-                        right: -25,
-                        bottom: -25,
-                        child: Image.asset(
-                          ImagePath.BOX_COVER_BLACK,
-                          height: 200,
-                        ),
-                      ),
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             vertical: Sizes.PADDING_40),

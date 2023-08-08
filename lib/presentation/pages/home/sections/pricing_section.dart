@@ -173,7 +173,7 @@ class _PricingSectionState extends State<PricingSection>
     double fontSize = responsiveSize(context, 60, 72, md: 64);
     double fontSizeTableHeader = responsiveSize(context, 18, 26);
     double fontSizeTableLeading = responsiveSize(context, 14, 18);
-    double fontSizeTableData = responsiveSize(context, 12, 16);
+    double fontSizeTableData = responsiveSize(context, 10, 16);
     TextStyle? titleStyle = textTheme.bodyText1?.merge(
       Styles.customTextStyle3(fontSize: fontSize, height: 1.25),
     );
@@ -183,7 +183,7 @@ class _PricingSectionState extends State<PricingSection>
     return ScaleTransition(
       scale: _scaleAnimation,
       child: DataTable(
-        columnSpacing: 10,
+        columnSpacing: 5,
         dataRowMinHeight: 45,
         dataRowMaxHeight: 80,
         columns: <DataColumn>[
@@ -368,9 +368,12 @@ class _PricingSectionState extends State<PricingSection>
             ),
           ),
           const SizedBox(width: 10),
-          Text(
-            text,
-            style: tableDataValueStyle,
+          Flexible(
+            child: Text(
+              text,
+              maxLines: 3,
+              style: tableDataValueStyle,
+            ),
           )
         ],
       )
