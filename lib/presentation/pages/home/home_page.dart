@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage>
     NavItemData(name: StringConst.TRACK, key: GlobalKey()),
     NavItemData(name: StringConst.PLATFORMS, key: GlobalKey()),
     NavItemData(name: StringConst.PRICING, key: GlobalKey()),
-    NavItemData(name: StringConst.ABOUT, key: GlobalKey()),
+    NavItemData(name: StringConst.SUPPORT, key: GlobalKey()),
     // NavItemData(name: StringConst.BLOG, key: GlobalKey()),
   ];
 
@@ -159,15 +159,7 @@ class _HomePageState extends State<HomePage>
                     SizedBox(height: spacerHeight),
                     _renderPricingSection(),
                     SizedBox(height: spacerHeight),
-                    // StatisticsSection(),
-                    // SizedBox(height: spacerHeight),
-                    // Container(
-                    //   key: navItems[3].key,
-                    //   child: ProjectsSection(),
-                    // ),
-                    // SizedBox(height: spacerHeight),
-                    // Awards, blog
-                    // FooterSection(),
+                    _renderFooter(),
                   ],
                 ),
               ),
@@ -282,6 +274,23 @@ class _HomePageState extends State<HomePage>
     child: Container(
       key: navItems[5].key,
       child: PricingSection(),
+    ),
+  );
+
+  _renderFooter() => VisibilityDetector(
+    key: Key("footer"),
+    onVisibilityChanged: (info) {
+      double visiblePercentage = info.visibleFraction * 100;
+      if (visiblePercentage > 25) {
+        setState(() {
+          List.generate(navItems.length, (index) => navItems[index].isSelected = false);
+          navItems[6].isSelected = true;
+        });
+      }
+    },
+    child: Container(
+      key: navItems[6].key,
+      child: FooterSection(),
     ),
   );
 }

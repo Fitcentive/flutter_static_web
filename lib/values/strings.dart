@@ -13,7 +13,7 @@ class StringConst {
   static const String PLATFORMS = "Platforms";
   static const String PRICING = "Pricing";
   static const String SERVICES = "Services";
-  static const String ABOUT = "About";
+  static const String SUPPORT = "Support";
   static const String PROJECTS = "Projects";
   static const String AWARDS = "Awards";
   static const String BLOG = "Blog";
@@ -21,7 +21,7 @@ class StringConst {
   static const String CONTACT = "Contacts";
 
   static const String CONTACT_US = "Contact Us";
-  static const String DEV_EMAIL = "davidcobbina47@gmail.com";
+  static const String DEV_EMAIL = "support@fitcentive.xyz";
   static const String EMAIL_URL = "mailto:<$DEV_EMAIL>?subject=&body=";
 
   //Header Section
@@ -39,9 +39,9 @@ class StringConst {
   static const String GET_STARTED = "GET STARTED";
   static const String TRY_NOW = "TRY NOW";
   static const String EMAIL = "Email";
-  static const String DEV_EMAIL_2 = "nimbus2000@mail.com";
+  static const String DEV_EMAIL_2 = "support@fitcentive.xyz";
   static const String BEHANCE = "Behance";
-  static const String BEHANCE_ID = "behance.net/nimbus200";
+  static const String BEHANCE_ID = "instagram.com/fitcentiveapp";
   static const String HIRE_ME_NOW = "Hire Me Now";
   static const String DISCOVER_PEOPLE = "Discover people";
   static const String FIND_OTHERS = "Find others with similar interests";
@@ -213,14 +213,15 @@ class StringConst {
   static const String BLOGGING = "Blogging";
 
   //Footer Section
-  static const String LETS_TALK = "Let's Talk!";
+  static const String GET_IN_TOUCH = "Get in touch";
+  static const String GET_IN_TOUCH_DESC = "Feature requests? Bugs? More info? Feel free to reach out";
   static const String PHONE_ME = "Phone Me";
   static const String PHONE_NUMBER = "+1 800 123 456 789";
-  static const String MAIL_ME = "Mail Me";
-  static const String FOLLOW_ME_2 = "Follow Me";
-  static const String FOLLOW_ME_2_URL = "behance.net/nimbus2000";
-  static const String RIGHTS_RESERVED = "© 2021 All rights reserved";
-  static const String BUILT_BY = "Built with Flutter by";
+  static const String EMAIL_US = "Email us";
+  static const String FOLLOW_ME_2 = "Follow us";
+  static const String FOLLOW_ME_2_URL = "instagram.com/fitcentiveapp";
+  static const String RIGHTS_RESERVED = "© 2023 | Fitcentive | All rights reserved";
+  static const String BUILT_BY = "Built with Flutter";
   static const String DAVID_COBBINA = "David Cobbina";
   static const String DESIGNED_BY = "Designed by";
   static const String WEB_GENIUS_LAB = "WebGeniusLab";

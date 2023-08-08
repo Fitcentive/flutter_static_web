@@ -13,19 +13,14 @@ import 'package:responsive_builder/responsive_builder.dart';
 
 List<FooterItem> footerItems = [
   FooterItem(
-    title: StringConst.PHONE_ME + ":",
-    subtitle: StringConst.PHONE_NUMBER,
-    iconData: FeatherIcons.phone,
-  ),
-  FooterItem(
-    title: StringConst.MAIL_ME + ":",
+    title: StringConst.EMAIL_US + ":",
     subtitle: StringConst.DEV_EMAIL_2,
     iconData: FontAwesomeIcons.paperPlane,
   ),
   FooterItem(
     title: StringConst.FOLLOW_ME_2 + ":",
     subtitle: StringConst.BEHANCE_ID,
-    iconData: FontAwesomeIcons.behance,
+    iconData: FontAwesomeIcons.instagram,
   ),
 ];
 
@@ -40,7 +35,7 @@ class _FooterSectionState extends State<FooterSection> {
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
     TextStyle? footerTextStyle = textTheme.caption?.copyWith(
-      color: AppColors.primaryText2,
+      color: AppColors.white,
       fontWeight: FontWeight.bold,
     );
     double screenWidth = widthOfScreen(context) - (getSidePadding(context) * 2);
@@ -82,112 +77,25 @@ class _FooterSectionState extends State<FooterSection> {
               text: TextSpan(
                 text: StringConst.RIGHTS_RESERVED + " ",
                 style: footerTextStyle,
-                children: [
-                  TextSpan(text: StringConst.DESIGNED_BY + " "),
-                  TextSpan(
-                    text: StringConst.WEB_GENIUS_LAB,
-                    style: footerTextStyle?.copyWith(
-                      decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.w900,
-                      color: AppColors.black,
-                    ),
-                  ),
-                ],
+                children: [],
               ),
               textAlign: TextAlign.center,
             ),
           ),
-          // NimBusLink(
-          //   url: StringConst.WEB_GENIUS_LAB_URL,
-          //   child: RichText(
-          //     text: TextSpan(
-          //       text: StringConst.RIGHTS_RESERVED + " ",
-          //       style: footerTextStyle,
-          //       children: [
-          //         TextSpan(text: StringConst.DESIGNED_BY + " "),
-          //         TextSpan(
-          //           text: StringConst.WEB_GENIUS_LAB,
-          //           style: footerTextStyle?.copyWith(
-          //             decoration: TextDecoration.underline,
-          //             fontWeight: FontWeight.w900,
-          //             color: AppColors.black,
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //     textAlign: TextAlign.center,
-          //   ),
-          // ),
           SpaceH4(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
                 child: Center(
-                  child:InkWell(
-                    onTap: () => openUrlLink(StringConst.DAVID_LEGEND_URL),
-                    child: RichText(
-                      text: TextSpan(
-                        text: StringConst.BUILT_BY + " ",
-                        style: footerTextStyle,
-                        children: [
-                          TextSpan(
-                            text: StringConst.DAVID_COBBINA + ". ",
-                            style: footerTextStyle?.copyWith(
-                              decoration: TextDecoration.underline,
-                              fontWeight: FontWeight.w900,
-                              color: AppColors.black,
-                            ),
-                          ),
-                        ],
-                      ),
+                  child:RichText(
+                    text: TextSpan(
+                      text: StringConst.BUILT_BY,
+                      style: footerTextStyle,
+                      children: [],
                     ),
                   ),
-                  //  NimBusLink(
-                  //   url: StringConst.DAVID_LEGEND_URL,
-                  //   child: RichText(
-                  //     text: TextSpan(
-                  //       text: StringConst.BUILT_BY + " ",
-                  //       style: footerTextStyle,
-                  //       children: [
-                  //         TextSpan(
-                  //           text: StringConst.DAVID_COBBINA + ". ",
-                  //           style: footerTextStyle?.copyWith(
-                  //             decoration: TextDecoration.underline,
-                  //             fontWeight: FontWeight.w900,
-                  //             color: AppColors.black,
-                  //           ),
-                  //         ),
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
                 ),
-              ),
-            ],
-          ),
-          SpaceH4(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(StringConst.MADE_IN_GHANA, style: footerTextStyle),
-              SpaceW4(),
-              ClipRRect(
-                borderRadius: BorderRadius.all(const Radius.circular(20)),
-                child: Image.asset(
-                  ImagePath.GHANA_FLAG,
-                  width: Sizes.WIDTH_16,
-                  height: Sizes.HEIGHT_16,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              SpaceW4(),
-              Text(StringConst.WITH_LOVE, style: footerTextStyle),
-              SpaceW4(),
-              Icon(
-                FontAwesomeIcons.solidHeart,
-                color: AppColors.red,
-                size: Sizes.ICON_SIZE_12,
               ),
             ],
           ),
@@ -235,50 +143,27 @@ class _FooterSectionState extends State<FooterSection> {
         borderRadius: const BorderRadius.all(
           Radius.circular(Sizes.RADIUS_8),
         ),
-        child: Stack(
-          children: [
-            Positioned(
-              top: -(height * 0.1),
-              left: -(height * 0.15),
-              child: Image.asset(
-                ImagePath.BOX_COVER_GOLD,
-                // width: width * 0.6 ,
-                height: height * 0.5,
-                // fit: BoxFit.fill,
+        child: Center(
+          child: Column(
+            children: [
+              SpaceH80(),
+              Text(
+                StringConst.GET_IN_TOUCH,
+                textAlign: TextAlign.center,
+                style:
+                    textTheme.headline4?.copyWith(color: AppColors.white),
               ),
-            ),
-            Positioned(
-              bottom: -(height * 0.1),
-              right: -(height * 0.1),
-              child: Image.asset(
-                ImagePath.BOX_COVER_BLACK,
-                height: height * 0.6,
-                fit: BoxFit.cover,
+              SpaceH60(),
+              ..._buildFooterItems(footerItems),
+              SpaceH60(),
+              CustomButton(
+                buttonTitle: StringConst.CONTACT_US,
+                buttonColor: AppColors.orange1,
+                onPressed: () {},
               ),
-            ),
-            Center(
-              child: Column(
-                children: [
-                  SpaceH80(),
-                  Text(
-                    StringConst.LETS_TALK,
-                    textAlign: TextAlign.center,
-                    style:
-                        textTheme.headline4?.copyWith(color: AppColors.white),
-                  ),
-                  SpaceH60(),
-                  ..._buildFooterItems(footerItems),
-                  SpaceH60(),
-                  CustomButton(
-                    buttonTitle: StringConst.HIRE_ME,
-                    buttonColor: AppColors.primaryColor,
-                    onPressed: () {},
-                  ),
-                  SpaceH80(),
-                ],
-              ),
-            ),
-          ],
+              SpaceH80(),
+            ],
+          ),
         ),
       ),
     );
@@ -302,49 +187,34 @@ class _FooterSectionState extends State<FooterSection> {
         ),
         child: Stack(
           children: [
-            Positioned(
-              top: -(height * 0.15),
-              left: -(height * 0.15),
-              child: Image.asset(
-                ImagePath.BOX_COVER_GOLD,
-                // width: width ,
-                height: height * 0.5,
-                // fit: BoxFit.fill,
-              ),
-            ),
-            Positioned(
-              top: -(height * 0.15),
-              right: -(height * 0.1),
-              // bottom: -25,
-              child: Image.asset(
-                ImagePath.BOX_COVER_BLACK,
-                height: height * 1.25,
-                fit: BoxFit.cover,
-              ),
-            ),
             Column(
               children: [
-                Spacer(flex: 2),
+                const Spacer(flex: 2),
                 Text(
-                  StringConst.LETS_TALK,
+                  StringConst.GET_IN_TOUCH,
                   style: textTheme.headline3?.copyWith(color: AppColors.white),
                 ),
-                Spacer(),
+                const Spacer(),
+                Text(
+                  StringConst.GET_IN_TOUCH_DESC,
+                  style: textTheme.headlineMedium?.copyWith(color: AppColors.white),
+                ),
+                const Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Spacer(flex: 3),
+                    const Spacer(flex: 3),
                     ..._buildFooterItems(footerItems, isHorizontal: true),
-                    Spacer(flex: 3),
+                    const Spacer(flex: 3),
                   ],
                 ),
-                Spacer(),
-                CustomButtonLink(
+                const Spacer(),
+                const CustomButtonLink(
                   url: StringConst.EMAIL_URL,
-                  buttonTitle: StringConst.HIRE_ME,
-                  buttonColor: AppColors.primaryColor,
+                  buttonTitle: StringConst.CONTACT_US,
+                  buttonColor: AppColors.orange1,
                 ),
-                Spacer(flex: 2),
+                const Spacer(flex: 2),
               ],
             ),
           ],
@@ -372,7 +242,7 @@ class FooterItem extends StatelessWidget {
       children: [
         Icon(
           iconData,
-          color: AppColors.primaryColor,
+          color: AppColors.orange1,
           size: Sizes.ICON_SIZE_36,
         ),
         SpaceH8(),
