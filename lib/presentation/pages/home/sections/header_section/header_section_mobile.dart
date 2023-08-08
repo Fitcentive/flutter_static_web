@@ -15,7 +15,12 @@ const double socialTextSizeSm = 14.0;
 const double sidePadding = Sizes.PADDING_16;
 
 class HeaderSectionMobile extends StatefulWidget {
-  const HeaderSectionMobile({Key? key}) : super(key: key);
+  final IntCallback hopButtonCallback;
+
+  const HeaderSectionMobile({
+    Key? key,
+    required this.hopButtonCallback
+  }) : super(key: key);
 
   @override
   _HeaderSectionMobileState createState() => _HeaderSectionMobileState();
@@ -267,6 +272,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                   children: buildCardRow(
                     context: context,
                     data: Data.nimbusCardData,
+                    dataCallback: widget.hopButtonCallback,
                     width: contentAreaWidth,
                     isHorizontal: false,
                     hasAnimation: false,

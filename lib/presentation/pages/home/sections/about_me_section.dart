@@ -219,26 +219,26 @@ class _AboutMeSectionState extends State<AboutMeSection>
             ),
           ],
         ),
-        Positioned(
-          top: width * 0.2,
-          left: width * 0.2,
-          child: FadeTransition(
-            opacity: _fadeInAnimation,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  StringConst.HI,
-                  style: titleStyle,
-                ),
-                Text(
-                  StringConst.THERE,
-                  style: titleStyle,
-                ),
-              ],
-            ),
-          ),
-        ),
+        // Positioned(
+        //   top: width * 0.2,
+        //   left: width * 0.2,
+        //   child: FadeTransition(
+        //     opacity: _fadeInAnimation,
+        //     child: Column(
+        //       crossAxisAlignment: CrossAxisAlignment.start,
+        //       children: [
+        //         Text(
+        //           StringConst.HI,
+        //           style: titleStyle,
+        //         ),
+        //         Text(
+        //           StringConst.THERE,
+        //           style: titleStyle,
+        //         ),
+        //       ],
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }
@@ -301,29 +301,29 @@ class _AboutMeSectionState extends State<AboutMeSection>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomInfoSection1(
-                sectionTitle: StringConst.ABOUT_ME,
-                title1: StringConst.CREATIVE_DESIGN,
-                title2: StringConst.HELP,
-                body: StringConst.ABOUT_ME_DESC,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      StringConst.FOLLOW_ME_1,
-                      style: textTheme.headline6?.copyWith(
-                        color: AppColors.black,
-                      ),
-                    ),
-                    SpaceH16(),
-                    Wrap(
-                      spacing: kSpacingLg,
-                      runSpacing: kRunSpacingLg,
-                      children: _buildSocialButtons(
-                        Data.socialData2,
-                      ),
-                    ),
-                  ],
-                ),
+                sectionTitle: StringConst.DISCOVER_HEADING,
+                title1: StringConst.FIND_BUDDIES,
+                title2: StringConst.WITH_SIMILAR_INTERESTS,
+                body: StringConst.DISCOVER_DESCRIPTION,
+                // child: Column(
+                //   crossAxisAlignment: CrossAxisAlignment.start,
+                //   children: [
+                //     Text(
+                //       StringConst.FOLLOW_ME_1,
+                //       style: textTheme.headline6?.copyWith(
+                //         color: AppColors.black,
+                //       ),
+                //     ),
+                //     SpaceH16(),
+                //     Wrap(
+                //       spacing: kSpacingLg,
+                //       runSpacing: kRunSpacingLg,
+                //       children: _buildSocialButtons(
+                //         Data.socialData2,
+                //       ),
+                //     ),
+                //   ],
+                // ),
               ),
             ],
           ),
@@ -335,10 +335,10 @@ class _AboutMeSectionState extends State<AboutMeSection>
   Widget nimbusInfoSectionSm({required double width}) {
     TextTheme textTheme = Theme.of(context).textTheme;
     return CustomInfoSection2(
-      sectionTitle: StringConst.ABOUT_ME,
-      title1: StringConst.CREATIVE_DESIGN,
-      title2: StringConst.HELP,
-      body: StringConst.ABOUT_ME_DESC,
+      sectionTitle: StringConst.DISCOVER_HEADING,
+      title1: StringConst.FIND_BUDDIES,
+      title2: StringConst.WITH_SIMILAR_INTERESTS,
+      body: StringConst.DISCOVER_DESCRIPTION,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -7,7 +7,9 @@ class StringConst {
   //Nav Section
   static const String NAME_ABBREV = "CA";
   static const String HOME = "Home";
-  static const String FEATURES = "Features";
+  static const String DISCOVER = "Discover";
+  static const String MEETUP = "Meetup";
+  static const String TRACK = "Track";
   static const String PLATFORMS = "Platforms";
   static const String PRICING = "Pricing";
   static const String SERVICES = "Services";
@@ -57,9 +59,9 @@ class StringConst {
   //AboutMe Section
   static const String HI = "Hi";
   static const String THERE = "There!";
-  static const String ABOUT_ME = "about me";
-  static const String ABOUT_ME_DESC =
-      "Product Designer and Digital Creative Director working in design field for 13 years so far, specialized in UI/UX, Branding and digital designs. These are the words we live by in everything we do. Every story we tell, every brand we build, and every interaction we create must not only look beautiful. beautifully, too.";
+  static const String DISCOVER_HEADING = "Discover";
+  static const String DISCOVER_DESCRIPTION =
+      "Update your preferences to include your interests, we will then match you up with other liked-minded individuals!\n\nFind a partner to workout with, or play a sport!";
   static const String ABOUT_ME_DESC_1 =
       "Product Designer and Digital Creative Director working in design ";
   static const String ABOUT_ME_DESC_2 =
@@ -70,8 +72,8 @@ class StringConst {
       "story we tell, every brand we build, and every interaction we";
   static const String ABOUT_ME_DESC_5 =
       "create must not only look beautiful. beautifully, too.";
-  static const String CREATIVE_DESIGN = "Need Creative Design?";
-  static const String HELP = "I can Help You!";
+  static const String FIND_BUDDIES = "Find buddies";
+  static const String WITH_SIMILAR_INTERESTS = "with similar interests";
   static const String FOLLOW_ME_1 = "You can also follow me here:";
   static const String DRIBBLE = "Dribble";
   static const String INSTA = "Insta";

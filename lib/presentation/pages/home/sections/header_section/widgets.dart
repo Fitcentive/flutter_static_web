@@ -7,6 +7,8 @@ import 'package:flutter_static_web/presentation/widgets/custom_card.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
 import 'package:flutter_static_web/values/values.dart';
 
+typedef IntCallback = void Function(int selectedIndex);
+
 class HeaderImage extends StatefulWidget {
   const HeaderImage({
     Key? key,
@@ -89,6 +91,7 @@ List<Widget> buildSocialIcons(List<SocialButtonData> socialItems) {
 List<Widget> buildCardRow({
   required BuildContext context,
   required List<CustomCardData> data,
+  required IntCallback dataCallback,
   required double width,
   bool isHorizontal = true,
   bool isWrap = false,
@@ -116,48 +119,53 @@ List<Widget> buildCardRow({
   );
   for (int index = 0; index < data.length; index++) {
     items.add(
-      CustomCard(
-        width: width,
-        height: responsiveSize(
-          context,
-          125,
-          140,
-        ),
-        hasAnimation: hasAnimation,
-        leading: CircularContainer(
-          width: cardWidth,
-          height: cardWidth,
-          iconSize: iconSize,
-          backgroundColor: data[index].circleBgColor,
-          iconColor: data[index].leadingIconColor,
-        ),
-        title: Flexible(
-          child: SelectableText(
-            data[index].title,
-            style: textTheme.subtitle1?.copyWith(
-              fontSize: responsiveSize(
-                context,
-                Sizes.TEXT_SIZE_16,
-                Sizes.TEXT_SIZE_18,
+      InkWell(
+        onTap: () {
+          dataCallback(index);
+        },
+        child: CustomCard(
+          width: width,
+          height: responsiveSize(
+            context,
+            125,
+            140,
+          ),
+          hasAnimation: hasAnimation,
+          leading: CircularContainer(
+            width: cardWidth,
+            height: cardWidth,
+            iconSize: iconSize,
+            backgroundColor: data[index].circleBgColor,
+            iconColor: data[index].leadingIconColor,
+          ),
+          title: Flexible(
+            child: SelectableText(
+              data[index].title,
+              style: textTheme.subtitle1?.copyWith(
+                fontSize: responsiveSize(
+                  context,
+                  Sizes.TEXT_SIZE_16,
+                  Sizes.TEXT_SIZE_18,
+                ),
               ),
             ),
           ),
-        ),
-        subtitle: Flexible(
-          child: SelectableText(
-            data[index].subtitle,
-            style: textTheme.bodyText1?.copyWith(
-                fontSize: responsiveSize(
-              context,
-              Sizes.TEXT_SIZE_14,
-              Sizes.TEXT_SIZE_16,
-            )),
+          subtitle: Flexible(
+            child: SelectableText(
+              data[index].subtitle,
+              style: textTheme.bodyText1?.copyWith(
+                  fontSize: responsiveSize(
+                context,
+                Sizes.TEXT_SIZE_14,
+                Sizes.TEXT_SIZE_16,
+              )),
+            ),
           ),
-        ),
-        trailing: Icon(
-          Icons.chevron_right,
-          size: trailingIconSize,
-          color: data[index].trailingIconColor,
+          trailing: Icon(
+            Icons.chevron_right,
+            size: trailingIconSize,
+            color: data[index].trailingIconColor,
+          ),
         ),
       ),
     );

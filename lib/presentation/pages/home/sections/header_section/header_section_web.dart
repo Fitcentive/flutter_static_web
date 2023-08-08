@@ -17,6 +17,12 @@ const double socialTextSizeSm = 14.0;
 // const double sidePadding = Sizes.PADDING_16;
 
 class HeaderSectionWeb extends StatefulWidget {
+  final IntCallback hopButtonCallback;
+
+  const HeaderSectionWeb({
+    required this.hopButtonCallback
+  });
+
   @override
   _HeaderSectionWebState createState() => _HeaderSectionWebState();
 }
@@ -70,6 +76,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
     List<Widget> cardsForTabletView = buildCardRow(
       context: context,
       data: Data.nimbusCardData,
+      dataCallback: widget.hopButtonCallback,
       width: contentAreaWidth * 0.4,
       isWrap: true,
     );
@@ -252,6 +259,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: buildCardRow(
                             context: context,
+                            dataCallback: widget.hopButtonCallback,
                             data: Data.nimbusCardData,
                             width: contentAreaWidth,
                             isHorizontal: false,
@@ -286,6 +294,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                             children: [
                               ...buildCardRow(
                                 context: context,
+                                dataCallback: widget.hopButtonCallback,
                                 data: Data.nimbusCardData,
                                 width: contentAreaWidth / 3.8,
                               ),
