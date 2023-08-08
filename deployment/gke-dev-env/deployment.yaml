@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: web
+  name: flutter-static-web-app
+  labels:
+    app: flutter-static-web-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flutter-static-web-app
+  template:
+    metadata:
+      labels:
+        app: flutter-static-web-app
+    spec:
+      containers:
+        - name: flutter-static-web-app
+          image: gcr.io/fitcentive-dev-03/flutter-static-web-app:1.0
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: 300Mi
+              cpu: "0.1"
+            limits:
+              memory: 500Mi
+              cpu: "0.25"
+          ports:
+            - name: http-port
+              containerPort: 80
+
