@@ -84,7 +84,12 @@ class _NavSectionWebState extends State<NavSectionWeb> {
           children: [
             SizedBox(width: logoSpaceLeft),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                _onTapNavItem(
+                  context: widget.navItems[0].key,
+                  navItemName: widget.navItems[0].name,
+                );
+              },
               child: Image.asset(
                 ImagePath.LOGO_DARK,
                 height: Sizes.HEIGHT_100,

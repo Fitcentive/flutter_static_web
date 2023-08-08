@@ -66,6 +66,14 @@ class StringConst {
       "Track steps and view daily summaries\n\n"
       "Share achievements with your commumnity";
 
+  //Pricing section
+  static const String PRICING_SECTION = "Pricing";
+  static const String PRICING_HEADING_1 = "Cost";
+  static const String PRICING_DESC = "Fitcentive will forever provide a free version of the service\n\n"
+      "We also offer a premium Fitcentive+ version with a host of additional features\n\n"
+      "Subscriptions are billed monthly at CAD \$3.99 per month\n\n"
+      "New Fitcentive+ users get a 30 day free trial";
+
   //AboutMe Section
   static const String HI = "Hi";
   static const String THERE = "There!";

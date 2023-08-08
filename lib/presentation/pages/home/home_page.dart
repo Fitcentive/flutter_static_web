@@ -1,6 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_static_web/presentation/pages/home/sections/platform_section.dart';
+import 'package:flutter_static_web/presentation/pages/home/sections/pricing_section.dart';
 import 'package:flutter_static_web/presentation/pages/home/sections/track_section.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
@@ -155,6 +156,9 @@ class _HomePageState extends State<HomePage>
                     _renderTrackSection(),
                     SizedBox(height: spacerHeight),
                     _renderPlatformSection(),
+                    SizedBox(height: spacerHeight),
+                    _renderPricingSection(),
+                    SizedBox(height: spacerHeight),
                     // StatisticsSection(),
                     // SizedBox(height: spacerHeight),
                     // Container(
@@ -163,7 +167,7 @@ class _HomePageState extends State<HomePage>
                     // ),
                     // SizedBox(height: spacerHeight),
                     // Awards, blog
-                    FooterSection(),
+                    // FooterSection(),
                   ],
                 ),
               ),
@@ -261,6 +265,23 @@ class _HomePageState extends State<HomePage>
     child: Container(
       key: navItems[4].key,
       child: PlatformSection(),
+    ),
+  );
+
+  _renderPricingSection() => VisibilityDetector(
+    key: Key("pricing"),
+    onVisibilityChanged: (info) {
+      double visiblePercentage = info.visibleFraction * 100;
+      if (visiblePercentage > 25) {
+        setState(() {
+          List.generate(navItems.length, (index) => navItems[index].isSelected = false);
+          navItems[5].isSelected = true;
+        });
+      }
+    },
+    child: Container(
+      key: navItems[5].key,
+      child: PricingSection(),
     ),
   );
 }
