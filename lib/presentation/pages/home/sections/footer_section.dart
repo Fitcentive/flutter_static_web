@@ -151,7 +151,13 @@ class _FooterSectionState extends State<FooterSection> {
                 StringConst.GET_IN_TOUCH,
                 textAlign: TextAlign.center,
                 style:
-                    textTheme.headline4?.copyWith(color: AppColors.white),
+                    textTheme.headline4?.copyWith(color: AppColors.orange1),
+              ),
+              SpaceH60(),
+              Text(
+                StringConst.GET_IN_TOUCH_DESC,
+                textAlign: TextAlign.center,
+                style: textTheme.headlineSmall?.copyWith(color: AppColors.white),
               ),
               SpaceH60(),
               ..._buildFooterItems(footerItems),
@@ -192,11 +198,13 @@ class _FooterSectionState extends State<FooterSection> {
                 const Spacer(flex: 2),
                 Text(
                   StringConst.GET_IN_TOUCH,
-                  style: textTheme.headline3?.copyWith(color: AppColors.white),
+                  textAlign: TextAlign.center,
+                  style: textTheme.headline3?.copyWith(color: AppColors.orange1),
                 ),
                 const Spacer(),
                 Text(
                   StringConst.GET_IN_TOUCH_DESC,
+                  textAlign: TextAlign.center,
                   style: textTheme.headlineMedium?.copyWith(color: AppColors.white),
                 ),
                 const Spacer(),

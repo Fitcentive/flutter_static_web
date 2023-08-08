@@ -93,17 +93,17 @@ class _DiscoverSectionState extends State<DiscoverSection>
                 children: [
                   ContentArea(
                     width: contentAreaWidthSm,
-                    child: _buildImage(
+                    child: _buildDiscoverSection(
                       width: contentAreaWidthSm,
-                      height: contentAreaHeightSm,
+                      height: screenHeight,
                     ),
                   ),
                   SpaceH40(),
                   ContentArea(
                     width: contentAreaWidthSm,
-                    child: _buildAboutMe(
+                    child: _buildImage(
                       width: contentAreaWidthSm,
-                      height: screenHeight,
+                      height: contentAreaHeightSm,
                     ),
                   ),
                 ],
@@ -120,7 +120,7 @@ class _DiscoverSectionState extends State<DiscoverSection>
                   ),
                   ContentArea(
                     width: contentAreaWidthLg,
-                    child: _buildAboutMe(
+                    child: _buildDiscoverSection(
                       width: contentAreaWidthLg,
                       height: screenHeight,
                     ),
@@ -192,7 +192,7 @@ class _DiscoverSectionState extends State<DiscoverSection>
     );
   }
 
-  Widget _buildAboutMe({
+  Widget _buildDiscoverSection({
     required double width,
     required double height,
   }) {
@@ -239,27 +239,11 @@ class _DiscoverSectionState extends State<DiscoverSection>
   }
 
   Widget nimbusInfoSectionSm({required double width}) {
-    TextTheme textTheme = Theme.of(context).textTheme;
     return CustomInfoSection2(
       sectionTitle: StringConst.DISCOVER_HEADING,
       title1: StringConst.FIND_BUDDIES,
       title2: StringConst.WITH_SIMILAR_INTERESTS,
       body: StringConst.DISCOVER_DESCRIPTION,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            StringConst.FOLLOW_ME_1,
-            style: textTheme.headline6?.copyWith(color: AppColors.black),
-          ),
-          SpaceH16(),
-          Wrap(
-            spacing: kSpacingSm,
-            runSpacing: kRunSpacingSm,
-            children: _buildSocialButtons(Data.socialData2),
-          ),
-        ],
-      ),
     );
   }
 }

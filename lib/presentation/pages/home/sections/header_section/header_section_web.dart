@@ -108,31 +108,6 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
             height: heightOfStack,
             child: Stack(
               children: [
-                // Stack(
-                //   children: [
-                //     Positioned(
-                //       left: -(sizeOfBlobSm * 0.7),
-                //       top: blobOffset,
-                //       child: Image.asset(
-                //         ImagePath.BLOB_BLACK,
-                //         height: sizeOfBlobSm,
-                //         width: sizeOfBlobSm,
-                //       ),
-                //     ),
-                //     Positioned(
-                //       left: -(sizeOfGoldenGlobe * 0.5),
-                //       top: blobOffset + dottedGoldenGlobeOffset,
-                //       child: RotationTransition(
-                //         turns: _controller,
-                //         child: Image.asset(
-                //           ImagePath.DOTS_GLOBE_YELLOW,
-                //           width: sizeOfGoldenGlobe,
-                //           height: sizeOfGoldenGlobe,
-                //         ),
-                //       ),
-                //     ),
-                //   ],
-                // ),
                 Positioned(
                   right: 10,
                   child: HeaderImage(
@@ -147,130 +122,118 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Stack(
-                children: [
-                  // Container(
-                  //   margin: EdgeInsets.only(top: heightOfStack * 0.05),
-                  //   child: SelectableText(
-                  //     StringConst.FIRST_NAME,
-                  //     style: textTheme.headline1?.copyWith(
-                  //       color: AppColors.grey50,
-                  //       fontSize: headerIntroTextSize * 2,
-                  //     ),
-                  //   ),
-                  // ),
-                  Container(
-                    margin: EdgeInsets.only(
-                        top: heightOfStack * 0.2, left: (sizeOfBlobSm * 0.35)),
-                    child: Row(
+              Container(
+                margin: EdgeInsets.only(
+                    top: heightOfStack * 0.2,
+                    left: (sizeOfBlobSm * 0.35)
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            ConstrainedBox(
-                              constraints:
-                                  BoxConstraints(maxWidth: screenWidth),
-                              child: AnimatedTextKit(
-                                animatedTexts: [
-                                  TypewriterAnimatedText(
-                                    StringConst.FIND_YOUR,
-                                    speed: Duration(milliseconds: 60),
-                                    textStyle: textTheme.headline2?.copyWith(
-                                      fontSize: headerIntroTextSize,
-                                      color: Colors.white
-                                    ),
-                                  ),
-                                ],
-                                onTap: () {},
-                                isRepeatingAnimation: false,
-                                totalRepeatCount: 5,
-                              ),
-                            ),
-                            ConstrainedBox(
-                              constraints:
-                                  BoxConstraints(maxWidth: screenWidth),
-                              child: AnimatedTextKit(
-                                animatedTexts: [
-                                  TypewriterAnimatedText(
-                                    StringConst.INCENTIVE,
-                                    speed: Duration(milliseconds: 60),
-                                    textStyle: textTheme.headline2?.copyWith(
-                                        fontSize: headerIntroTextSize,
-                                        color: AppColors.orange1
-                                    ),
-                                  ),
-                                ],
-                                onTap: () {},
-                                isRepeatingAnimation: false,
-                                totalRepeatCount: 5,
-                              ),
-                            ),
-                            ConstrainedBox(
-                              constraints:
+                        ConstrainedBox(
+                          constraints:
                               BoxConstraints(maxWidth: screenWidth),
-                              child: AnimatedTextKit(
-                                animatedTexts: [
-                                  TypewriterAnimatedText(
-                                    StringConst.TO_KEEP_FIT,
-                                    speed: Duration(milliseconds: 60),
-                                    textStyle: textTheme.headline2?.copyWith(
-                                        fontSize: headerIntroTextSize,
-                                        color: AppColors.white
-                                    ),
-                                  ),
-                                ],
-                                onTap: () {},
-                                isRepeatingAnimation: false,
-                                totalRepeatCount: 5,
-                              ),
-                            ),
-                            SpaceH16(),
-                            Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    CustomButton(
-                                      width: buttonWidth,
-                                      height: buttonHeight,
-                                      buttonTitle: StringConst.GET_STARTED,
-                                      buttonColor: AppColors.orange1,
-                                      onPressed: () {
-                                        openUrlLink("https://app.fitcentive.xyz");
-                                      },
-                                    ),
-                                  ],
+                          child: AnimatedTextKit(
+                            animatedTexts: [
+                              TypewriterAnimatedText(
+                                StringConst.FIND_YOUR,
+                                speed: Duration(milliseconds: 60),
+                                textStyle: textTheme.headline2?.copyWith(
+                                  fontSize: headerIntroTextSize,
+                                  color: Colors.white
                                 ),
-                                SpaceH16(),
-                                Row(
-                                  children: [
-                                    SocialButton2(
-                                      title: "",
-                                      iconData: FontAwesomeIcons.googlePlay,
-                                      onPressed: () => openUrlLink("https://google.ca"),
-                                      buttonColor: AppColors.orange1,
-                                      iconColor: AppColors.white,
-                                    ),
-                                    SocialButton2(
-                                      title: "",
-                                      iconData: FontAwesomeIcons.appStore,
-                                      onPressed: () => openUrlLink("https://google.ca"),
-                                      buttonColor: AppColors.orange1,
-                                      iconColor: AppColors.white,
-                                    ),
-                                  ],
-                                )
+                              ),
+                            ],
+                            onTap: () {},
+                            isRepeatingAnimation: false,
+                            totalRepeatCount: 5,
+                          ),
+                        ),
+                        ConstrainedBox(
+                          constraints:
+                              BoxConstraints(maxWidth: screenWidth),
+                          child: AnimatedTextKit(
+                            animatedTexts: [
+                              TypewriterAnimatedText(
+                                StringConst.INCENTIVE,
+                                speed: Duration(milliseconds: 60),
+                                textStyle: textTheme.headline2?.copyWith(
+                                    fontSize: headerIntroTextSize,
+                                    color: AppColors.orange1
+                                ),
+                              ),
+                            ],
+                            onTap: () {},
+                            isRepeatingAnimation: false,
+                            totalRepeatCount: 5,
+                          ),
+                        ),
+                        ConstrainedBox(
+                          constraints:
+                          BoxConstraints(maxWidth: screenWidth),
+                          child: AnimatedTextKit(
+                            animatedTexts: [
+                              TypewriterAnimatedText(
+                                StringConst.TO_KEEP_FIT,
+                                speed: Duration(milliseconds: 60),
+                                textStyle: textTheme.headline2?.copyWith(
+                                    fontSize: headerIntroTextSize,
+                                    color: AppColors.white
+                                ),
+                              ),
+                            ],
+                            onTap: () {},
+                            isRepeatingAnimation: false,
+                            totalRepeatCount: 5,
+                          ),
+                        ),
+                        SpaceH16(),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                CustomButton(
+                                  width: buttonWidth,
+                                  height: buttonHeight,
+                                  buttonTitle: StringConst.GET_STARTED,
+                                  buttonColor: AppColors.orange1,
+                                  onPressed: () {
+                                    openUrlLink("https://app.fitcentive.xyz");
+                                  },
+                                ),
                               ],
                             ),
+                            SpaceH16(),
+                            Row(
+                              children: [
+                                SocialButton2(
+                                  title: "",
+                                  iconData: FontAwesomeIcons.googlePlay,
+                                  onPressed: () => openUrlLink("https://google.ca"),
+                                  buttonColor: AppColors.orange1,
+                                  iconColor: AppColors.white,
+                                ),
+                                SocialButton2(
+                                  title: "",
+                                  iconData: FontAwesomeIcons.appStore,
+                                  onPressed: () => openUrlLink("https://google.ca"),
+                                  buttonColor: AppColors.orange1,
+                                  iconColor: AppColors.white,
+                                ),
+                              ],
+                            )
                           ],
                         ),
                       ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              SizedBox(height: 450),
+              SizedBox(height: heightOfStack / 2),
               Container(
                 margin: EdgeInsets.only(left: (sizeOfBlobSm * 0.35)),
                 child: ResponsiveBuilder(

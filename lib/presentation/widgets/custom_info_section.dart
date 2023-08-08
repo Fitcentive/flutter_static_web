@@ -32,7 +32,7 @@ class CustomInfoSection1 extends StatelessWidget {
     this.bodyStyle,
     this.thickness = 1.15,
     this.quarterTurns = 3,
-    this.dividerColor = AppColors.grey350,
+    this.dividerColor = AppColors.white,
     this.dividerHeight = Sizes.HEIGHT_40,
     this.child,
   });
@@ -142,7 +142,7 @@ class CustomInfoSection2 extends StatelessWidget {
     this.title2Style,
     this.bodyStyle,
     this.thickness = 1.15,
-    this.dividerColor = AppColors.grey350,
+    this.dividerColor = AppColors.white,
     this.dividerWidth = Sizes.HEIGHT_64,
     this.child,
   });
@@ -152,6 +152,7 @@ class CustomInfoSection2 extends StatelessWidget {
     TextTheme textTheme = Theme.of(context).textTheme;
     TextStyle? titleStyle = textTheme.headline3?.copyWith(
       fontSize: responsiveSize(context, 26, 48, md: 32),
+      color: AppColors.orange1,
     );
     double fontSize = responsiveSize(context, 16, 18);
     return Column(
@@ -173,7 +174,7 @@ class CustomInfoSection2 extends StatelessWidget {
               style: textTheme.bodyText2?.copyWith(
                 fontSize: fontSize,
                 fontWeight: FontWeight.w400,
-                color: AppColors.grey250,
+                color: AppColors.white
               ),
             ),
           ],
@@ -207,7 +208,7 @@ class CustomInfoSection2 extends StatelessWidget {
             Text(
               body,
               style: textTheme.bodyText1
-                  ?.copyWith(fontSize: fontSize, height: 1.8),
+                  ?.copyWith(fontSize: fontSize, height: 1.8, color: AppColors.white),
             ),
             child != null ? SpaceH30() : Empty(),
             child ?? Empty(),

@@ -231,27 +231,11 @@ class _MeetupSectionState extends State<MeetupSection> with TickerProviderStateM
   }
 
   Widget nimbusInfoSectionSm({required double width}) {
-    TextTheme textTheme = Theme.of(context).textTheme;
     return CustomInfoSection2(
-      sectionTitle: StringConst.DISCOVER_HEADING,
-      title1: StringConst.FIND_BUDDIES,
-      title2: StringConst.WITH_SIMILAR_INTERESTS,
-      body: StringConst.DISCOVER_DESCRIPTION,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            StringConst.FOLLOW_ME_1,
-            style: textTheme.headline6?.copyWith(color: AppColors.black),
-          ),
-          SpaceH16(),
-          Wrap(
-            spacing: kSpacingSm,
-            runSpacing: kRunSpacingSm,
-            children: _buildSocialButtons(Data.socialData2),
-          ),
-        ],
-      ),
+      sectionTitle: StringConst.MEETUP_SECTION,
+      title1: StringConst.STAY_ACTIVE,
+      title2: StringConst.TOGETHER,
+      body: StringConst.STAY_ACTIVE_DESC,
     );
   }
 }

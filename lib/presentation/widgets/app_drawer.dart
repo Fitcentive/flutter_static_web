@@ -17,7 +17,7 @@ class AppDrawer extends StatefulWidget {
   final GestureTapCallback? onClose;
 
   AppDrawer({
-    this.color = AppColors.black200,
+    this.color = Colors.teal,
     this.width,
     required this.menuList,
     this.onClose,
@@ -41,6 +41,21 @@ class _AppDrawerState extends State<AppDrawer> {
       child: Drawer(
         child: Container(
           color: widget.color,
+          // decoration: const BoxDecoration(
+          //   color: Colors.teal,
+          //   boxShadow: [
+          //     Shadows.elevationShadow,
+          //   ],
+          //   gradient: LinearGradient(
+          //     begin: Alignment.centerLeft,
+          //     end: Alignment.centerRight,
+          //     colors: <Color>[
+          //       Color(0xff2C3E50),
+          //       Color(0xff009688),
+          //     ], // Gradient from https://learnui.design/tools/gradient-generator.html
+          //     tileMode: TileMode.mirror,
+          //   ),
+          // ),
           padding: const EdgeInsets.symmetric(
             horizontal: Sizes.PADDING_24,
             vertical: Sizes.PADDING_24,
@@ -136,7 +151,7 @@ class _AppDrawerState extends State<AppDrawer> {
   Widget _buildFooterText() {
     TextTheme textTheme = Theme.of(context).textTheme;
     TextStyle? footerTextStyle = textTheme.caption?.copyWith(
-      color: AppColors.primaryText2,
+      color: AppColors.white,
       fontWeight: FontWeight.bold,
     );
     return Column(
@@ -145,19 +160,9 @@ class _AppDrawerState extends State<AppDrawer> {
         Center(
           child: SelectableText.rich(
             TextSpan(
-              text: StringConst.RIGHTS_RESERVED + " ",
+              text: StringConst.RIGHTS_RESERVED,
               style: footerTextStyle,
-              children: [
-                TextSpan(text: StringConst.DESIGNED_BY + " "),
-                TextSpan(
-                  text: StringConst.WEB_GENIUS_LAB,
-                  style: footerTextStyle?.copyWith(
-                    decoration: TextDecoration.underline,
-                    fontWeight: FontWeight.w900,
-                    color: AppColors.white,
-                  ),
-                ),
-              ],
+              children: [],
             ),
             textAlign: TextAlign.center,
           ),
@@ -167,47 +172,14 @@ class _AppDrawerState extends State<AppDrawer> {
           children: [
             RichText(
               text: TextSpan(
-                text: StringConst.BUILT_BY + " ",
+                text: StringConst.BUILT_BY,
                 style: footerTextStyle,
-                children: [
-                  TextSpan(
-                    text: StringConst.DAVID_COBBINA + ". ",
-                    style: footerTextStyle?.copyWith(
-                      decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.w900,
-                      color: AppColors.white,
-                    ),
-                  ),
-                ],
+                children: [],
               ),
             ),
           ],
         ),
         SpaceH4(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(StringConst.MADE_IN_GHANA, style: footerTextStyle),
-            SpaceW4(),
-            ClipRRect(
-              borderRadius: BorderRadius.all(const Radius.circular(20)),
-              child: Image.asset(
-                ImagePath.GHANA_FLAG,
-                width: Sizes.WIDTH_16,
-                height: Sizes.HEIGHT_16,
-                fit: BoxFit.cover,
-              ),
-            ),
-            SpaceW4(),
-            Text(StringConst.WITH_LOVE, style: footerTextStyle),
-            SpaceW4(),
-            Icon(
-              FontAwesomeIcons.solidHeart,
-              color: AppColors.red,
-              size: Sizes.ICON_SIZE_12,
-            ),
-          ],
-        ),
       ],
     );
   }

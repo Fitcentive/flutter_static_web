@@ -93,17 +93,17 @@ class _PricingSectionState extends State<PricingSection>
                 children: [
                   ContentArea(
                     width: contentAreaWidthSm,
-                    child: _buildComparisonTable(
+                    child: _buildPricingSection(
                       width: contentAreaWidthSm,
-                      height: contentAreaHeightSm,
+                      height: screenHeight,
                     ),
                   ),
                   SpaceH40(),
                   ContentArea(
                     width: contentAreaWidthSm,
-                    child: _buildPricingSection(
+                    child: _buildComparisonTable(
                       width: contentAreaWidthSm,
-                      height: screenHeight,
+                      height: contentAreaHeightSm,
                     ),
                   ),
                 ],
@@ -178,14 +178,14 @@ class _PricingSectionState extends State<PricingSection>
       Styles.customTextStyle3(fontSize: fontSize, height: 1.25),
     );
     TextStyle tableDataStyle = TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: fontSizeTableLeading);
-    TextStyle tableDataValueStyle = TextStyle(fontWeight: FontWeight.normal, color: Colors.white, fontSize: fontSizeTableLeading);
+    TextStyle tableDataValueStyle = TextStyle(fontWeight: FontWeight.normal, color: Colors.white, fontSize: fontSizeTableData);
 
     return ScaleTransition(
       scale: _scaleAnimation,
       child: DataTable(
         columnSpacing: 10,
         dataRowMinHeight: 45,
-        dataRowMaxHeight: 60,
+        dataRowMaxHeight: 80,
         columns: <DataColumn>[
           DataColumn(
             label: Expanded(
@@ -425,25 +425,10 @@ class _PricingSectionState extends State<PricingSection>
   Widget nimbusInfoSectionSm({required double width}) {
     TextTheme textTheme = Theme.of(context).textTheme;
     return CustomInfoSection2(
-      sectionTitle: StringConst.DISCOVER_HEADING,
-      title1: StringConst.FIND_BUDDIES,
-      title2: StringConst.WITH_SIMILAR_INTERESTS,
-      body: StringConst.DISCOVER_DESCRIPTION,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            StringConst.FOLLOW_ME_1,
-            style: textTheme.headline6?.copyWith(color: AppColors.black),
-          ),
-          SpaceH16(),
-          Wrap(
-            spacing: kSpacingSm,
-            runSpacing: kRunSpacingSm,
-            children: _buildSocialButtons(Data.socialData2),
-          ),
-        ],
-      ),
+      sectionTitle: StringConst.PRICING_SECTION,
+      title1: StringConst.PRICING_HEADING_1,
+      hasTitle2: false,
+      body: StringConst.PRICING_DESC,
     );
   }
 }

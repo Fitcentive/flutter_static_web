@@ -93,17 +93,17 @@ class _TrackSectionState extends State<TrackSection>
                 children: [
                   ContentArea(
                     width: contentAreaWidthSm,
-                    child: _buildImage(
+                    child: _buildTrack(
                       width: contentAreaWidthSm,
-                      height: contentAreaHeightSm,
+                      height: screenHeight,
                     ),
                   ),
                   SpaceH40(),
                   ContentArea(
                     width: contentAreaWidthSm,
-                    child: _buildAboutMe(
+                    child: _buildImage(
                       width: contentAreaWidthSm,
-                      height: screenHeight,
+                      height: contentAreaHeightSm,
                     ),
                   ),
                 ],
@@ -120,7 +120,7 @@ class _TrackSectionState extends State<TrackSection>
                   ),
                   ContentArea(
                     width: contentAreaWidthLg,
-                    child: _buildAboutMe(
+                    child: _buildTrack(
                       width: contentAreaWidthLg,
                       height: screenHeight,
                     ),
@@ -151,18 +151,6 @@ class _TrackSectionState extends State<TrackSection>
           buttonColor: data[index].buttonColor,
           iconColor: data[index].iconColor,
         ),
-        // NimBusLink(
-        //   url: data[index].url,
-        //   child: SocialButton2(
-        //     width: width,
-        //     title: data[index].title.toUpperCase(),
-        //     iconData: data[index].iconData,
-        //     onPressed: () {},
-        //     titleColor: data[index].titleColor,
-        //     buttonColor: data[index].buttonColor,
-        //     iconColor: data[index].iconColor,
-        //   ),
-        // ),
       );
     }
     return items;
@@ -192,7 +180,7 @@ class _TrackSectionState extends State<TrackSection>
     );
   }
 
-  Widget _buildAboutMe({
+  Widget _buildTrack({
     required double width,
     required double height,
   }) {
@@ -239,27 +227,11 @@ class _TrackSectionState extends State<TrackSection>
   }
 
   Widget nimbusInfoSectionSm({required double width}) {
-    TextTheme textTheme = Theme.of(context).textTheme;
     return CustomInfoSection2(
-      sectionTitle: StringConst.DISCOVER_HEADING,
-      title1: StringConst.FIND_BUDDIES,
-      title2: StringConst.WITH_SIMILAR_INTERESTS,
-      body: StringConst.DISCOVER_DESCRIPTION,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            StringConst.FOLLOW_ME_1,
-            style: textTheme.headline6?.copyWith(color: AppColors.black),
-          ),
-          SpaceH16(),
-          Wrap(
-            spacing: kSpacingSm,
-            runSpacing: kRunSpacingSm,
-            children: _buildSocialButtons(Data.socialData2),
-          ),
-        ],
-      ),
+      sectionTitle: StringConst.TRACK_SECTION,
+      title1: StringConst.TRACK_HEADING_1,
+      title2: StringConst.TRACK_HEADING_2,
+      body: StringConst.TRACK_DESC,
     );
   }
 }

@@ -12,14 +12,26 @@ class NavSectionMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: Sizes.HEIGHT_100,
-      decoration: BoxDecoration(
-        color: AppColors.black100,
+      decoration: const BoxDecoration(
+        color: Colors.teal,
+        boxShadow: [
+          Shadows.elevationShadow,
+        ],
+        gradient: LinearGradient(
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+          colors: <Color>[
+            Color(0xff009688),
+            Color(0xff2C3E50),
+          ], // Gradient from https://learnui.design/tools/gradient-generator.html
+          tileMode: TileMode.mirror,
+        ),
       ),
       child: Row(
         children: [
           SpaceW30(),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               FeatherIcons.menu,
               color: AppColors.white,
               size: Sizes.ICON_SIZE_26,
@@ -32,7 +44,7 @@ class NavSectionMobile extends StatelessWidget {
               }
             },
           ),
-          Spacer(),
+          const Spacer(),
           InkWell(
             onTap: () {},
             child: Image.asset(
@@ -40,7 +52,7 @@ class NavSectionMobile extends StatelessWidget {
               height: Sizes.HEIGHT_52,
             ),
           ),
-          Spacer(),
+          const Spacer(),
         ],
       ),
     );
