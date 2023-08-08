@@ -37,6 +37,7 @@ class StringConst {
   static const String ABOUT_ME_2 =
       "13 years so far, specialized in UI/UX, Branding and digital designs.";
   static const String GET_STARTED = "GET STARTED";
+  static const String TRY_NOW = "TRY NOW";
   static const String EMAIL = "Email";
   static const String DEV_EMAIL_2 = "nimbus2000@mail.com";
   static const String BEHANCE = "Behance";
@@ -55,6 +56,15 @@ class StringConst {
   static const String JAVASCRIPT = "Javascript";
   static const String HTML = "HTML";
   static const String CSS = "CSS";
+
+  // Track section
+  static const String TRACK_SECTION = "Track";
+  static const String TRACK_HEADING_1 = "Track activities";
+  static const String TRACK_HEADING_2 = "and nutrition";
+  static const String TRACK_DESC = "Journal your day and associate them to meetups\n\n"
+      "Attain milestones and view progress over time\n\n"
+      "Track steps and view daily summaries\n\n"
+      "Share achievements with your commumnity";
 
   //AboutMe Section
   static const String HI = "Hi";
@@ -78,12 +88,22 @@ class StringConst {
   static const String DRIBBLE = "Dribble";
   static const String INSTA = "Insta";
 
+  // Platform section
+  static const String PLATFORM_SECTION = "Platforms";
+  static const String PLATFORMS_HEADER = "Available";
+  static const String PLATFORMS_HEADER_2 = "Platforms";
+  static const String PLATFORMS_DESCRIPTION = "Fitcentive is available on the web!\n"
+      "The iOS and Android apps will be available soon";
+
   //Skills Section
-  static const String MY_SKILLS = "my skills";
-  static const String SKILLS_TITLE_1 = "What My Design";
-  static const String SKILLS_TITLE_2 = "Skills Include";
-  static const String SKILLS_DESC =
-      "These are the words we live by in everything we do. Every story we tell, every brand we build, and every interaction we create must not only look beautiful.";
+  static const String MEETUP_SECTION = "Meetup";
+  static const String STAY_ACTIVE = "Stay active together";
+  static const String TOGETHER = "and motivate each other";
+  static const String STAY_ACTIVE_DESC =
+      "Create a meetup and add your friends\n\n"
+      "Discover locations to convene at\n\n"
+      "Add your availabilities to find a common time\n\n"
+      "Track your activities together";
   static const String TOOLS_1_NAME = "Photoshop";
   static const String TOOLS_1_PROFICIENCY = "80%";
   static const String TOOLS_2_NAME = "Illustrator";

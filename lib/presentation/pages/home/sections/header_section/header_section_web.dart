@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
 import 'package:flutter_static_web/presentation/pages/home/sections/header_section/widgets.dart';
 import 'package:flutter_static_web/presentation/widgets/buttons/custom_button.dart';
+import 'package:flutter_static_web/presentation/widgets/buttons/social_button_2.dart';
 import 'package:flutter_static_web/presentation/widgets/content_area.dart';
 import 'package:flutter_static_web/presentation/widgets/buttons/custom_button_link.dart';
 import 'package:flutter_static_web/presentation/widgets/spaces.dart';
 import 'package:flutter_static_web/utils/functions.dart';
 import 'package:flutter_static_web/values/values.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 const double bodyTextSizeLg = 16.0;
@@ -97,7 +99,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
     double dottedGoldenGlobeOffset = sizeOfBlobSm * 0.4;
     double heightOfBlobAndGlobe =
         computeHeight(dottedGoldenGlobeOffset, sizeOfGoldenGlobe, sizeOfBlobSm);
-    double heightOfStack = heightOfBlobAndGlobe * 2;
+    double heightOfStack = heightOfBlobAndGlobe * 1.66;
     double blobOffset = heightOfStack * 0.3;
     return ContentArea(
       child: Stack(
@@ -132,7 +134,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                 //   ],
                 // ),
                 Positioned(
-                  right: -(sizeOfBlobSm * 0.1),
+                  right: 10,
                   child: HeaderImage(
                     controller: _controller,
                     globeSize: sizeOfGoldenGlobe,
@@ -225,17 +227,40 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                               ),
                             ),
                             SpaceH16(),
-                            Row(
+                            Column(
                               children: [
-                                CustomButton(
-                                  width: buttonWidth,
-                                  height: buttonHeight,
-                                  buttonTitle: StringConst.GET_STARTED,
-                                  buttonColor: AppColors.orange1,
-                                  onPressed: () {
-                                    openUrlLink("https://app.fitcentive.xyz");
-                                  },
+                                Row(
+                                  children: [
+                                    CustomButton(
+                                      width: buttonWidth,
+                                      height: buttonHeight,
+                                      buttonTitle: StringConst.GET_STARTED,
+                                      buttonColor: AppColors.orange1,
+                                      onPressed: () {
+                                        openUrlLink("https://app.fitcentive.xyz");
+                                      },
+                                    ),
+                                  ],
                                 ),
+                                SpaceH16(),
+                                Row(
+                                  children: [
+                                    SocialButton2(
+                                      title: "",
+                                      iconData: FontAwesomeIcons.googlePlay,
+                                      onPressed: () => openUrlLink("https://google.ca"),
+                                      buttonColor: AppColors.orange1,
+                                      iconColor: AppColors.white,
+                                    ),
+                                    SocialButton2(
+                                      title: "",
+                                      iconData: FontAwesomeIcons.appStore,
+                                      onPressed: () => openUrlLink("https://google.ca"),
+                                      buttonColor: AppColors.orange1,
+                                      iconColor: AppColors.white,
+                                    ),
+                                  ],
+                                )
                               ],
                             ),
                           ],

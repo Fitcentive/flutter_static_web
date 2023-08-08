@@ -1,8 +1,10 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_static_web/presentation/pages/home/sections/platform_section.dart';
+import 'package:flutter_static_web/presentation/pages/home/sections/track_section.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_static_web/presentation/layout/adaptive.dart';
-import 'package:flutter_static_web/presentation/pages/home/sections/about_me_section.dart';
+import 'package:flutter_static_web/presentation/pages/home/sections/discover_section.dart';
 import 'package:flutter_static_web/presentation/pages/home/sections/awards_section.dart';
 import 'package:flutter_static_web/presentation/pages/home/sections/blog_section.dart';
 import 'package:flutter_static_web/presentation/pages/home/sections/footer_section.dart';
@@ -10,7 +12,7 @@ import 'package:flutter_static_web/presentation/pages/home/sections/header_secti
 import 'package:flutter_static_web/presentation/pages/home/sections/nav_section/nav_section_mobile.dart';
 import 'package:flutter_static_web/presentation/pages/home/sections/nav_section/nav_section_web.dart';
 import 'package:flutter_static_web/presentation/pages/home/sections/projects_section.dart';
-import 'package:flutter_static_web/presentation/pages/home/sections/skills_section.dart';
+import 'package:flutter_static_web/presentation/pages/home/sections/meetup_section.dart';
 import 'package:flutter_static_web/presentation/pages/home/sections/statistics_section.dart';
 import 'package:flutter_static_web/presentation/widgets/app_drawer.dart';
 import 'package:flutter_static_web/presentation/widgets/nav_item.dart';
@@ -104,7 +106,7 @@ class _HomePageState extends State<HomePage>
             // Scroll to header section
             scrollToSection(navItems[0].key.currentContext!);
           },
-          child: Icon(
+          child: const Icon(
             FontAwesomeIcons.arrowUp,
             size: Sizes.ICON_SIZE_18,
             color: AppColors.white,
@@ -144,79 +146,24 @@ class _HomePageState extends State<HomePage>
                 ),
                 child: Column(
                   children: [
-                    HeaderSection(
-                      key: navItems[0].key,
-                      hopButtonCallback: genericCallback
-                    ),
+                    _renderLandingSection(),
                     SizedBox(height: spacerHeight),
-                    VisibilityDetector(
-                      key: Key("about"),
-                      onVisibilityChanged: (visibilityInfo) {
-                        double visiblePercentage =
-                            visibilityInfo.visibleFraction * 100;
-                        if (visiblePercentage > 10) {
-                          _controller.forward();
-                        }
-                      },
-                      child: Container(
-                        key: navItems[1].key,
-                        child: AboutMeSection(),
-                      ),
-                    ),
+                    _renderDiscoverSection(),
                     SizedBox(height: spacerHeight),
-                    // Skills and projects
-                    Stack(
-                      children: [
-                        Positioned(
-                          top: assignWidth(context, 0.1),
-                          left: -assignWidth(context, 0.05),
-                          child: Image.asset(ImagePath.BLOB_FEMUR_ASH),
-                        ),
-                        Positioned(
-                          right: -assignWidth(context, 0.5),
-                          child: Image.asset(ImagePath.BLOB_SMALL_BEAN_ASH),
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              key: navItems[2].key,
-                              child: SkillsSection(),
-                            ),
-                            SizedBox(height: spacerHeight),
-                            StatisticsSection(),
-                            SizedBox(height: spacerHeight),
-                            Container(
-                              key: navItems[3].key,
-                              child: ProjectsSection(),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                    _renderMeetupSection(),
                     SizedBox(height: spacerHeight),
+                    _renderTrackSection(),
+                    SizedBox(height: spacerHeight),
+                    _renderPlatformSection(),
+                    // StatisticsSection(),
+                    // SizedBox(height: spacerHeight),
+                    // Container(
+                    //   key: navItems[3].key,
+                    //   child: ProjectsSection(),
+                    // ),
+                    // SizedBox(height: spacerHeight),
                     // Awards, blog
-                    Stack(
-                      children: [
-                        Positioned(
-                          left: -assignWidth(context, 0.6),
-                          child: Image.asset(ImagePath.BLOB_ASH),
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              key: navItems[4].key,
-                              child: AwardsSection(),
-                            ),
-                            // SpaceH40(),
-                            // Container(
-                            //   key: navItems[5].key,
-                            //   child: BlogSection(),
-                            // ),
-                            FooterSection(),
-                          ],
-                        )
-                      ],
-                    ),
+                    FooterSection(),
                   ],
                 ),
               ),
@@ -226,4 +173,94 @@ class _HomePageState extends State<HomePage>
       ),
     );
   }
+
+  _renderLandingSection() => VisibilityDetector(
+    key: Key("homeheader"),
+    onVisibilityChanged: (info) {
+      double visiblePercentage = info.visibleFraction * 100;
+      if (visiblePercentage > 25) {
+        setState(() {
+          List.generate(navItems.length, (index) => navItems[index].isSelected = false);
+          navItems[0].isSelected = true;
+        });
+      }
+    },
+    child: HeaderSection(
+        key: navItems[0].key,
+        hopButtonCallback: genericCallback
+    ),
+  );
+
+  _renderDiscoverSection() => VisibilityDetector(
+    key: Key("discover"),
+    onVisibilityChanged: (visibilityInfo) {
+      double visiblePercentage = visibilityInfo.visibleFraction * 100;
+      if (visiblePercentage > 10) {
+        _controller.forward();
+      }
+
+      if (visiblePercentage > 25) {
+        setState(() {
+          List.generate(navItems.length, (index) => navItems[index].isSelected = false);
+          navItems[1].isSelected = true;
+        });
+      }
+    },
+    child: Container(
+      key: navItems[1].key,
+      child: DiscoverSection(),
+    ),
+  );
+
+  _renderMeetupSection() => VisibilityDetector(
+    key: Key("meetup"),
+    onVisibilityChanged: (info) {
+      double visiblePercentage = info.visibleFraction * 100;
+      if (visiblePercentage > 25) {
+        setState(() {
+          List.generate(navItems.length, (index) => navItems[index].isSelected = false);
+          navItems[2].isSelected = true;
+        });
+      }
+    },
+    child: Container(
+      key: navItems[2].key,
+      child: MeetupSection(),
+    ),
+  );
+
+
+  _renderTrackSection() => VisibilityDetector(
+    key: Key("track"),
+    onVisibilityChanged: (info) {
+      double visiblePercentage = info.visibleFraction * 100;
+      if (visiblePercentage > 25) {
+        setState(() {
+          List.generate(navItems.length, (index) => navItems[index].isSelected = false);
+          navItems[3].isSelected = true;
+        });
+      }
+    },
+    child: Container(
+      key: navItems[3].key,
+      child: TrackSection(),
+    ),
+  );
+
+  _renderPlatformSection() => VisibilityDetector(
+    key: Key("platform"),
+    onVisibilityChanged: (info) {
+      double visiblePercentage = info.visibleFraction * 100;
+      if (visiblePercentage > 25) {
+        setState(() {
+          List.generate(navItems.length, (index) => navItems[index].isSelected = false);
+          navItems[4].isSelected = true;
+        });
+      }
+    },
+    child: Container(
+      key: navItems[4].key,
+      child: PlatformSection(),
+    ),
+  );
 }

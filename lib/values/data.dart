@@ -50,6 +50,8 @@ class Data {
     ),
   ];
 
+
+
   static List<SkillLevelData> skillLevelData = [
     SkillLevelData(
       skill: StringConst.SKILLS_1,
