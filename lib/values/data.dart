@@ -106,7 +106,7 @@ class Data {
     ProjectCategoryData(title: StringConst.ALL, number: 6, isSelected: true),
     ProjectCategoryData(title: StringConst.BRANDING, number: 1),
     ProjectCategoryData(title: StringConst.PACKAGING, number: 1),
-    ProjectCategoryData(title: StringConst.PHOTOGRAPHER, number: 2),
+    ProjectCategoryData(title: StringConst.SCHEDULE_ACTIVITIES, number: 2),
     ProjectCategoryData(title: StringConst.WEB_DESIGN, number: 3),
   ];
 
@@ -150,25 +150,26 @@ class Data {
 
   static List<CustomCardData> nimbusCardData = [
     CustomCardData(
-      title: StringConst.UI_UX,
-      subtitle: StringConst.UI_UX_DESC,
+      title: StringConst.DISCOVER_PEOPLE,
+      subtitle: StringConst.FIND_OTHERS,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
+      circleBgColor: AppColors.orange1,
     ),
     CustomCardData(
-      title: StringConst.PHOTOGRAPHER,
-      subtitle: StringConst.PHOTOGRAPHER_DESC,
+      title: StringConst.SCHEDULE_ACTIVITIES,
+      subtitle: StringConst.SCHEDULE_ACTIVITIES_DESC,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
-      circleBgColor: AppColors.yellow100,
+      circleBgColor: AppColors.orange1,
     ),
     CustomCardData(
-      title: StringConst.FREELANCER,
-      subtitle: StringConst.FREELANCER_DESC,
+      title: StringConst.TRACK_PROGRESS,
+      subtitle: StringConst.TRACK_PROGRESS_DESC,
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
-      leadingIconColor: AppColors.black,
-      circleBgColor: AppColors.grey50,
+      // leadingIconColor: AppColors.black,
+      circleBgColor: AppColors.orange1,
     ),
   ];
 

@@ -143,7 +143,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    StringConst.INTRO,
+                                    StringConst.FIND_YOUR,
                                     speed: Duration(milliseconds: 60),
                                     textStyle: textTheme.headline2?.copyWith(
                                       fontSize: headerIntroTextSize,
@@ -228,7 +228,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                 CustomButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
-                                  buttonTitle: StringConst.DOWNLOAD_CV,
+                                  buttonTitle: StringConst.GET_STARTED,
                                   onPressed: () {},
                                 ),
                                 SpaceW16(),

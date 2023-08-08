@@ -99,33 +99,33 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
             height: heightOfStack,
             child: Stack(
               children: [
-                Stack(
-                  children: [
-                    Positioned(
-                      left: -(sizeOfBlobSm * 0.7),
-                      top: blobOffset,
-                      child: Image.asset(
-                        ImagePath.BLOB_BLACK,
-                        height: sizeOfBlobSm,
-                        width: sizeOfBlobSm,
-                      ),
-                    ),
-                    Positioned(
-                      left: -(sizeOfGoldenGlobe * 0.5),
-                      top: blobOffset + dottedGoldenGlobeOffset,
-                      child: RotationTransition(
-                        turns: _controller,
-                        child: Image.asset(
-                          ImagePath.DOTS_GLOBE_YELLOW,
-                          width: sizeOfGoldenGlobe,
-                          height: sizeOfGoldenGlobe,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                // Stack(
+                //   children: [
+                //     Positioned(
+                //       left: -(sizeOfBlobSm * 0.7),
+                //       top: blobOffset,
+                //       child: Image.asset(
+                //         ImagePath.BLOB_BLACK,
+                //         height: sizeOfBlobSm,
+                //         width: sizeOfBlobSm,
+                //       ),
+                //     ),
+                //     Positioned(
+                //       left: -(sizeOfGoldenGlobe * 0.5),
+                //       top: blobOffset + dottedGoldenGlobeOffset,
+                //       child: RotationTransition(
+                //         turns: _controller,
+                //         child: Image.asset(
+                //           ImagePath.DOTS_GLOBE_YELLOW,
+                //           width: sizeOfGoldenGlobe,
+                //           height: sizeOfGoldenGlobe,
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
                 Positioned(
-                  right: -(sizeOfBlobSm * 0.8),
+                  right: -(sizeOfBlobSm * 0.1),
                   child: HeaderImage(
                     controller: _controller,
                     globeSize: sizeOfGoldenGlobe,
@@ -140,16 +140,16 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
             children: [
               Stack(
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(top: heightOfStack * 0.05),
-                    child: SelectableText(
-                      StringConst.FIRST_NAME,
-                      style: textTheme.headline1?.copyWith(
-                        color: AppColors.grey50,
-                        fontSize: headerIntroTextSize * 2,
-                      ),
-                    ),
-                  ),
+                  // Container(
+                  //   margin: EdgeInsets.only(top: heightOfStack * 0.05),
+                  //   child: SelectableText(
+                  //     StringConst.FIRST_NAME,
+                  //     style: textTheme.headline1?.copyWith(
+                  //       color: AppColors.grey50,
+                  //       fontSize: headerIntroTextSize * 2,
+                  //     ),
+                  //   ),
+                  // ),
                   Container(
                     margin: EdgeInsets.only(
                         top: heightOfStack * 0.2, left: (sizeOfBlobSm * 0.35)),
@@ -166,15 +166,16 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    StringConst.INTRO,
+                                    StringConst.FIND_YOUR,
                                     speed: Duration(milliseconds: 60),
                                     textStyle: textTheme.headline2?.copyWith(
                                       fontSize: headerIntroTextSize,
+                                      color: Colors.white
                                     ),
                                   ),
                                 ],
                                 onTap: () {},
-                                isRepeatingAnimation: true,
+                                isRepeatingAnimation: false,
                                 totalRepeatCount: 5,
                               ),
                             ),
@@ -184,96 +185,52 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    StringConst.POSITION,
-                                    speed: Duration(milliseconds: 80),
+                                    StringConst.INCENTIVE,
+                                    speed: Duration(milliseconds: 60),
                                     textStyle: textTheme.headline2?.copyWith(
-                                      fontSize: headerIntroTextSize,
-                                      color: AppColors.primaryColor,
-                                      height: 1.2,
+                                        fontSize: headerIntroTextSize,
+                                        color: AppColors.orange1
                                     ),
                                   ),
                                 ],
                                 onTap: () {},
-                                isRepeatingAnimation: true,
+                                isRepeatingAnimation: false,
+                                totalRepeatCount: 5,
+                              ),
+                            ),
+                            ConstrainedBox(
+                              constraints:
+                              BoxConstraints(maxWidth: screenWidth),
+                              child: AnimatedTextKit(
+                                animatedTexts: [
+                                  TypewriterAnimatedText(
+                                    StringConst.TO_KEEP_FIT,
+                                    speed: Duration(milliseconds: 60),
+                                    textStyle: textTheme.headline2?.copyWith(
+                                        fontSize: headerIntroTextSize,
+                                        color: AppColors.white
+                                    ),
+                                  ),
+                                ],
+                                onTap: () {},
+                                isRepeatingAnimation: false,
                                 totalRepeatCount: 5,
                               ),
                             ),
                             SpaceH16(),
-                            ConstrainedBox(
-                              constraints:
-                                  BoxConstraints(maxWidth: screenWidth * 0.35),
-                              child: SelectableText(
-                                StringConst.ABOUT_DEV,
-                                style: bodyTextStyle?.copyWith(height: 1.5),
-                              ),
-                            ),
-                            SpaceH30(),
-                            Wrap(
-                              // mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SelectableText(
-                                      "${StringConst.EMAIL}:",
-                                      style: socialTitleStyle,
-                                    ),
-                                    SpaceH8(),
-                                    SelectableText(
-                                      "${StringConst.DEV_EMAIL_2}",
-                                      style: bodyTextStyle,
-                                    ),
-                                  ],
-                                ),
-                                SpaceW16(),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SelectableText(
-                                      "${StringConst.BEHANCE}:",
-                                      style: socialTitleStyle,
-                                    ),
-                                    SpaceH8(),
-                                    SelectableText(
-                                      "${StringConst.BEHANCE_ID}",
-                                      style: bodyTextStyle,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            SpaceH40(),
                             Row(
                               children: [
                                 CustomButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
-                                  buttonTitle: StringConst.DOWNLOAD_CV,
-                                  buttonColor: AppColors.primaryColor,
-                                  onPressed: () {},
+                                  buttonTitle: StringConst.GET_STARTED,
+                                  buttonColor: AppColors.orange1,
+                                  onPressed: () {
+                                    openUrlLink("https://app.fitcentive.xyz");
+                                  },
                                 ),
-                                SpaceW16(),
-                                CustomButton(
-                                  width: buttonWidth,
-                                  height: buttonHeight,
-                                  buttonTitle: StringConst.HIRE_ME_NOW,
-                                  opensUrl: true,
-                                  url: StringConst.EMAIL_URL,
-                                  // onPressed: () =>
-                                  //     openUrlLink(StringConst.EMAIL_URL),
-                                ),
-                                // NimBusButtonLink(
-                                //   width: buttonWidth,
-                                //   height: buttonHeight,
-                                //   url: StringConst.EMAIL_URL,
-                                //   buttonTitle: StringConst.HIRE_ME_NOW,
-                                // ),
                               ],
                             ),
-                            SpaceH30(),
-                            Wrap(
-                              children: buildSocialIcons(Data.socialData),
-                            )
                           ],
                         ),
                       ],
@@ -281,7 +238,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                   ),
                 ],
               ),
-              SizedBox(height: 150),
+              SizedBox(height: 450),
               Container(
                 margin: EdgeInsets.only(left: (sizeOfBlobSm * 0.35)),
                 child: ResponsiveBuilder(

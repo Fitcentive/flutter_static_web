@@ -64,19 +64,20 @@ class _NavSectionWebState extends State<NavSectionWeb> {
 
     return Container(
       height: Sizes.HEIGHT_100,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.teal,
         boxShadow: [
           Shadows.elevationShadow,
         ],
-        // gradient: RadialGradient(
-        //   center: Alignment.center,
-        //   radius: 0.8,
-        //   colors: [
-        //     Color(0x009688),
-        //     Color(0x2C3E50),
-        //   ],
-        // ),
+        gradient: LinearGradient(
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+          colors: <Color>[
+            Color(0xff009688),
+            Color(0xff2C3E50),
+          ], // Gradient from https://learnui.design/tools/gradient-generator.html
+          tileMode: TileMode.mirror,
+        ),
       ),
       child: IntrinsicHeight(
         child: Row(

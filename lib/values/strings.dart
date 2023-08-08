@@ -24,7 +24,9 @@ class StringConst {
 
   //Header Section
   static const String FIRST_NAME = "Ameli";
-  static const String INTRO = "Hi! I'm Ameli Nimbus -";
+  static const String FIND_YOUR = "Find your";
+  static const String INCENTIVE = "incentive";
+  static const String TO_KEEP_FIT = "to keep fit";
   static const String POSITION = "UI/UX Designer";
   static const String ABOUT_DEV =
       "Product Designer and Digital Creative Director working in design field for 13 years so far, specialized in UI/UX, Branding and digital designs.";
@@ -32,18 +34,18 @@ class StringConst {
       "Product Designer and Digital Creative Director working in design field for";
   static const String ABOUT_ME_2 =
       "13 years so far, specialized in UI/UX, Branding and digital designs.";
-  static const String DOWNLOAD_CV = "Download CV";
+  static const String GET_STARTED = "GET STARTED";
   static const String EMAIL = "Email";
   static const String DEV_EMAIL_2 = "nimbus2000@mail.com";
   static const String BEHANCE = "Behance";
   static const String BEHANCE_ID = "behance.net/nimbus200";
   static const String HIRE_ME_NOW = "Hire Me Now";
-  static const String UI_UX = "UI/UX Designer";
-  static const String UI_UX_DESC = "creative websites for you";
-  static const String PHOTOGRAPHER = "Photographer";
-  static const String PHOTOGRAPHER_DESC = "Awesome photo & video";
-  static const String FREELANCER = "Freelancer";
-  static const String FREELANCER_DESC = "You can hire me now";
+  static const String DISCOVER_PEOPLE = "Discover people";
+  static const String FIND_OTHERS = "Find others with similar interests";
+  static const String SCHEDULE_ACTIVITIES = "Schedule activities";
+  static const String SCHEDULE_ACTIVITIES_DESC = "Find a gym, tennis court, and so much more!";
+  static const String TRACK_PROGRESS = "Track progress";
+  static const String TRACK_PROGRESS_DESC = "Log activity and nutrition";
 
   static const String PYTHON = "Python";
   static const String JAVA = "Java";

@@ -121,14 +121,15 @@ class _HomePageState extends State<HomePage>
               controller: _scrollController,
               child: Container(
                 // color: Colors.teal,
-                decoration: BoxDecoration(
-                  gradient: RadialGradient(
-                    center: Alignment.center,
-                    radius: 0.8,
-                    colors: [
-                      Color(0x009688),
-                      Color(0x2C3E50),
-                    ],
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: <Color>[
+                      Color(0xff009688),
+                      Color(0xff2C3E50),
+                    ], // Gradient from https://learnui.design/tools/gradient-generator.html
+                    tileMode: TileMode.mirror,
                   ),
                 ),
                 child: Column(

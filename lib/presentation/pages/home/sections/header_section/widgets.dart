@@ -38,17 +38,17 @@ class _HeaderImageState extends State<HeaderImage> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Positioned(
-          left: 0,
-          child: RotationTransition(
-            turns: widget.controller,
-            child: Image.asset(
-              ImagePath.DOTS_GLOBE_GREY,
-              height: widget.globeSize,
-              width: widget.globeSize,
-            ),
-          ),
-        ),
+        // Positioned(
+        //   left: 0,
+        //   child: RotationTransition(
+        //     turns: widget.controller,
+        //     child: Image.asset(
+        //       ImagePath.DOTS_GLOBE_GREY,
+        //       height: widget.globeSize,
+        //       width: widget.globeSize,
+        //     ),
+        //   ),
+        // ),
         Image.asset(
           ImagePath.DEV_HEADER,
           width: widget.imageWidth,
