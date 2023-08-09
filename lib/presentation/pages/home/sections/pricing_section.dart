@@ -264,9 +264,9 @@ class _PricingSectionState extends State<PricingSection>
           ),
           DataRow(
             cells: [
-              DataCell(Text('Ads', style: tableDataStyle,)),
-              _iconCheck(),
+              DataCell(Text('Ad-free experience', style: tableDataStyle,)),
               _iconCross(),
+              _iconCheck(),
             ],
           ),
           DataRow(

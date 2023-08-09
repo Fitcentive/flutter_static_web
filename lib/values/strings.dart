@@ -46,7 +46,7 @@ class StringConst {
   static const String DISCOVER_PEOPLE = "Discover people";
   static const String FIND_OTHERS = "Find others with similar interests";
   static const String SCHEDULE_ACTIVITIES = "Schedule activities";
-  static const String SCHEDULE_ACTIVITIES_DESC = "Find a gym, tennis court, and so much more!";
+  static const String SCHEDULE_ACTIVITIES_DESC = "Find a location to workout together";
   static const String TRACK_PROGRESS = "Track progress";
   static const String TRACK_PROGRESS_DESC = "Log activity and nutrition";
 
@@ -61,18 +61,18 @@ class StringConst {
   static const String TRACK_SECTION = "Track";
   static const String TRACK_HEADING_1 = "Track activities";
   static const String TRACK_HEADING_2 = "and nutrition";
-  static const String TRACK_DESC = "Journal your day and associate them to meetups\n\n"
-      "Attain milestones and view progress over time\n\n"
-      "Track steps and view daily summaries\n\n"
-      "Share achievements with your commumnity";
+  static const String TRACK_DESC = "• Journal your day and associate them to meetups\n\n"
+      "• Attain milestones and view progress over time\n\n"
+      "• Track steps and view daily summaries\n\n"
+      "• Share achievements with your commumnity";
 
   //Pricing section
   static const String PRICING_SECTION = "Pricing";
   static const String PRICING_HEADING_1 = "Cost";
-  static const String PRICING_DESC = "Fitcentive will forever provide a free version of the service\n\n"
-      "We also offer a premium Fitcentive+ version with a host of additional features\n\n"
-      "Subscriptions are billed monthly at CAD \$3.99 per month\n\n"
-      "New Fitcentive+ users get a 30 day free trial";
+  static const String PRICING_DESC = "• Fitcentive will forever provide a free version of the service\n\n"
+      "• We also offer a premium Fitcentive+ version with a host of additional features\n\n"
+      "• Subscriptions are billed monthly at CAD \$3.99 per month\n\n"
+      "• New Fitcentive+ users get a 30 day free trial";
 
   //AboutMe Section
   static const String HI = "Hi";
@@ -108,10 +108,10 @@ class StringConst {
   static const String STAY_ACTIVE = "Stay active together";
   static const String TOGETHER = "and motivate each other";
   static const String STAY_ACTIVE_DESC =
-      "Create a meetup and add your friends\n\n"
-      "Discover locations to convene at\n\n"
-      "Add your availabilities to find a common time\n\n"
-      "Track your activities together";
+      "• Create a meetup and add your friends\n\n"
+      "• Discover locations to convene at\n\n"
+      "• Add your availabilities to find a common time\n\n"
+      "• Track your activities together";
   static const String TOOLS_1_NAME = "Photoshop";
   static const String TOOLS_1_PROFICIENCY = "80%";
   static const String TOOLS_2_NAME = "Illustrator";

@@ -78,145 +78,138 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
     return ContentArea(
       child: Column(
         children: [
-          Container(
-            height: heightOfStack,
-            child: Stack(
-              children: [
-                Positioned(
-                  right: 5,
-                  child: HeaderImage(
-                    controller: _controller,
-                    globeSize: sizeOfGoldenGlobe,
-                    imageHeight: heightOfStack,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(
-                top: 10,
-                left: (sizeOfBlobSm * 0.35)
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    ConstrainedBox(
-                      constraints:
-                      BoxConstraints(maxWidth: screenWidth),
-                      child: AnimatedTextKit(
-                        animatedTexts: [
-                          TypewriterAnimatedText(
-                            StringConst.FIND_YOUR,
-                            speed: Duration(milliseconds: 60),
-                            textStyle: textTheme.headline2?.copyWith(
-                                fontSize: headerIntroTextSize,
-                                color: Colors.white
-                            ),
-                          ),
-                        ],
-                        onTap: () {},
-                        isRepeatingAnimation: false,
-                        totalRepeatCount: 5,
-                      ),
-                    ),
-                    ConstrainedBox(
-                      constraints:
-                      BoxConstraints(maxWidth: screenWidth),
-                      child: AnimatedTextKit(
-                        animatedTexts: [
-                          TypewriterAnimatedText(
-                            StringConst.INCENTIVE,
-                            speed: Duration(milliseconds: 60),
-                            textStyle: textTheme.headline2?.copyWith(
-                                fontSize: headerIntroTextSize,
-                                color: AppColors.orange1
-                            ),
-                          ),
-                        ],
-                        onTap: () {},
-                        isRepeatingAnimation: false,
-                        totalRepeatCount: 5,
-                      ),
-                    ),
-                    ConstrainedBox(
-                      constraints:
-                      BoxConstraints(maxWidth: screenWidth),
-                      child: AnimatedTextKit(
-                        animatedTexts: [
-                          TypewriterAnimatedText(
-                            StringConst.TO_KEEP_FIT,
-                            speed: Duration(milliseconds: 60),
-                            textStyle: textTheme.headline2?.copyWith(
-                                fontSize: headerIntroTextSize,
-                                color: AppColors.white
-                            ),
-                          ),
-                        ],
-                        onTap: () {},
-                        isRepeatingAnimation: false,
-                        totalRepeatCount: 5,
-                      ),
-                    ),
-                    SpaceH16(),
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            CustomButton(
-                              width: buttonWidth,
-                              height: buttonHeight,
-                              buttonTitle: StringConst.GET_STARTED,
-                              buttonColor: AppColors.orange1,
-                              onPressed: () {
-                                openUrlLink("https://app.fitcentive.xyz");
-                              },
-                            ),
-                          ],
-                        ),
-                        SpaceH16(),
-                        Row(
-                          children: [
-                            SocialButton2(
-                              title: "",
-                              iconData: FontAwesomeIcons.googlePlay,
-                              onPressed: () => openUrlLink("https://google.ca"),
-                              buttonColor: AppColors.orange1,
-                              iconColor: AppColors.white,
-                            ),
-                            SocialButton2(
-                              title: "",
-                              iconData: FontAwesomeIcons.appStore,
-                              onPressed: () => openUrlLink("https://google.ca"),
-                              buttonColor: AppColors.orange1,
-                              iconColor: AppColors.white,
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-              ],
+          Center(
+            child: HeaderImage(
+              controller: _controller,
+              globeSize: sizeOfGoldenGlobe,
+              imageHeight: heightOfStack,
             ),
           ),
           SpaceH40(),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: sidePadding,
+          Center(
+            child: Container(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ConstrainedBox(
+                        constraints:
+                        BoxConstraints(maxWidth: screenWidth),
+                        child: AnimatedTextKit(
+                          animatedTexts: [
+                            TypewriterAnimatedText(
+                              StringConst.FIND_YOUR,
+                              speed: Duration(milliseconds: 60),
+                              textStyle: textTheme.headline2?.copyWith(
+                                  fontSize: headerIntroTextSize,
+                                  color: Colors.white
+                              ),
+                            ),
+                          ],
+                          onTap: () {},
+                          isRepeatingAnimation: false,
+                          totalRepeatCount: 5,
+                        ),
+                      ),
+                      ConstrainedBox(
+                        constraints:
+                        BoxConstraints(maxWidth: screenWidth),
+                        child: AnimatedTextKit(
+                          animatedTexts: [
+                            TypewriterAnimatedText(
+                              StringConst.INCENTIVE,
+                              speed: Duration(milliseconds: 60),
+                              textStyle: textTheme.headline2?.copyWith(
+                                  fontSize: headerIntroTextSize,
+                                  color: AppColors.orange1
+                              ),
+                            ),
+                          ],
+                          onTap: () {},
+                          isRepeatingAnimation: false,
+                          totalRepeatCount: 5,
+                        ),
+                      ),
+                      ConstrainedBox(
+                        constraints:
+                        BoxConstraints(maxWidth: screenWidth),
+                        child: AnimatedTextKit(
+                          animatedTexts: [
+                            TypewriterAnimatedText(
+                              StringConst.TO_KEEP_FIT,
+                              speed: Duration(milliseconds: 60),
+                              textStyle: textTheme.headline2?.copyWith(
+                                  fontSize: headerIntroTextSize,
+                                  color: AppColors.white
+                              ),
+                            ),
+                          ],
+                          onTap: () {},
+                          isRepeatingAnimation: false,
+                          totalRepeatCount: 5,
+                        ),
+                      ),
+                      SpaceH16(),
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              CustomButton(
+                                width: buttonWidth,
+                                height: buttonHeight,
+                                buttonTitle: StringConst.GET_STARTED,
+                                buttonColor: AppColors.orange1,
+                                onPressed: () {
+                                  openUrlLink("https://app.fitcentive.xyz");
+                                },
+                              ),
+                            ],
+                          ),
+                          SpaceH16(),
+                          Row(
+                            children: [
+                              SocialButton2(
+                                title: "",
+                                iconData: FontAwesomeIcons.googlePlay,
+                                onPressed: () => openUrlLink("https://google.ca"),
+                                buttonColor: AppColors.orange1,
+                                iconColor: AppColors.white,
+                              ),
+                              SocialButton2(
+                                title: "",
+                                iconData: FontAwesomeIcons.appStore,
+                                onPressed: () => openUrlLink("https://google.ca"),
+                                buttonColor: AppColors.orange1,
+                                iconColor: AppColors.white,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            child: Column(
-              children: buildCardRow(
-                context: context,
-                data: Data.nimbusCardData,
-                dataCallback: widget.hopButtonCallback,
-                width: contentAreaWidth,
-                isHorizontal: false,
-                hasAnimation: false,
+          ),
+          SpaceH40(),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: sidePadding,
+              ),
+              child: Column(
+                children: buildCardRow(
+                  context: context,
+                  data: Data.nimbusCardData,
+                  dataCallback: widget.hopButtonCallback,
+                  width: contentAreaWidth,
+                  isHorizontal: false,
+                  hasAnimation: false,
+                ),
               ),
             ),
           ),
